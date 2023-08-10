@@ -1,41 +1,39 @@
-import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header.jsx';
+import Home from './components/Home.jsx';
+import About from './components/About.jsx';
+import Services from './components/Services.jsx';
+import Contact from './components/Contact.jsx';
+import NewArrivals from './components/NewArrivals';
+import ProductDetails from './components/ProductDetails.jsx';
+import { GlobalStyle } from './GlobalStyles.jsx';
+import Men from './components/Men.jsx';
+import Jewelery from './components/Jewelery.jsx';
+import Electronics from './components/Electronics.jsx';
+import Women from './components/Women.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
+    <>
+      <Router>
+        <GlobalStyle />
+        <Header />
+        <Routes>
+          <Route path={'/'} element={<Home />} />
+          <Route path={'/about'} element={<About />} />
+          <Route path={'/services'} element={<Services />} />
+          <Route path={'/contact'} element={<Contact />} />
+          <Route path={'newarrivals'} element={<NewArrivals />} />
+          <Route path={'/products:id'} element={<ProductDetails />} />
+          <Route path={'/jewelery'} element={<Jewelery />} />
+          <Route path={'/men'} element={<Men />} />
+          <Route path={'/electronics'} element={<Electronics />} />
+          <Route path={'/women'} element={<Women />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
   );
 }
 
