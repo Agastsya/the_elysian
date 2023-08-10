@@ -1,7 +1,16 @@
 import { Link } from 'react-router-dom';
 import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
-import { Text, Avatar, HStack, VStack, Box, Center } from '@chakra-ui/react';
+import {
+  Text,
+  Avatar,
+  HStack,
+  VStack,
+  Box,
+  Center,
+  Image,
+} from '@chakra-ui/react';
 import styled from 'styled-components';
+import whale from '../assets/whale.png';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -35,7 +44,7 @@ const Header = () => {
             fontWeight={'bold'}
             fontFamily={'Inter'}
           >
-            The Elysian
+            thelysian
           </Text>
         </Link>
         <HStack>

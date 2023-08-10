@@ -17,7 +17,7 @@ const Testimonials = () => {
           my={'20'}
           align={['center', 'auto']}
         >
-          <Text>
+          <Text pr={['0', '20']}>
             {' '}
             "I can't believe the amazing experience I had with this ecommerce
             website! The products are out of this world... literally! I ordered
@@ -30,7 +30,6 @@ const Testimonials = () => {
             next time. 10/10, would teleport again!"
           </Text>
           <Image
-            pl={'10'}
             borderRadius="full"
             boxSize="250px"
             src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -40,21 +39,20 @@ const Testimonials = () => {
         </Stack>
         <Stack
           direction={['column', 'row']}
-          px={'30'}
-          py={'20'}
+          px={'10'}
+          py={'10'}
           my={'20'}
           rounded={'3xl'}
           bgColor={'#34d399'}
         >
           <Image
-            pr={'10'}
             borderRadius="full"
             boxSize="250px"
             src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Dan Abramov"
             align={['center', 'auto']}
           />
-          <Text>
+          <Text pl={['0', '20']}>
             {' '}
             "I've been shopping online for years, but I've never come across an
             ecommerce website quite like this one. The range of clothing options
@@ -69,13 +67,13 @@ const Testimonials = () => {
         </Stack>
         <Stack
           direction={['column', 'row']}
-          px={'30'}
-          py={'20'}
+          px={'10'}
+          py={'10'}
           rounded={'3xl'}
           bgColor={'#34d399'}
           my={'20'}
         >
-          <Text>
+          <Text px={['0', '20']}>
             {' '}
             "Two things I'm passionate about: staying ahead in fashion and
             keeping up with the latest tech trends. This ecommerce website is a
@@ -90,7 +88,6 @@ const Testimonials = () => {
             individuals who also crave the latest gadgets."
           </Text>
           <Image
-            pl={'30'}
             borderRadius="full"
             boxSize="250px"
             src="https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
