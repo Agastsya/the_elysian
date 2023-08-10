@@ -28,7 +28,7 @@ const Jewelery = () => {
         <>
           <HStack justifyContent={'space-evenly'} wrap={'wrap'}>
             {product.map(i =>
-              i.category == "women's clothing" ? (
+              i.category === "women's clothing" ? (
                 <ProductCard
                   key={i.key}
                   title={i.title.split('-')[0]}
