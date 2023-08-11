@@ -13,6 +13,7 @@ import Women from './components/Women.jsx';
 import Footer from './components/Footer.jsx';
 import { styled } from 'styled-components';
 import Resources from './components/Resources.jsx';
+import Findus from './components/Findus.jsx';
 
 export const GlobalStyle = styled.body`
   body {
@@ -39,6 +40,7 @@ function App() {
         <Route path={'/electronics'} element={<Electronics />} />
         <Route path={'/women'} element={<Women />} />
         <Route path={'/resources'} element={<Resources />} />
+        <Route path={'/findus'} element={<Findus />} />
       </Routes>
       <Footer />
     </Router>

@@ -7,6 +7,7 @@ const BODY = styled.body`
   background-color: #dcfce7;
   font-family: 'Arbutus Slab', serif;
 `;
+
 const HoverableH1 = styled.h1`
   &:hover {
     color: #16a34a;

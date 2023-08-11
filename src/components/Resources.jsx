@@ -8,6 +8,12 @@ import astronaut from '../assets/astronaut.jpg';
 import samurai from '../assets/samurai.png';
 import tokyomansion from '../assets/tokyomansion.jpg';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+
+const BODY = styled.body`
+  background-color: #dcfce7;
+  font-family: 'Arbutus Slab', serif;
+`;
 
 const headingOptions = {
   pos: 'absolute',
@@ -20,11 +26,11 @@ const headingOptions = {
 
 const Resources = () => {
   return (
-    <>
+    <BODY>
       <Box h={['32vh', '90vh']} rounded={'3xl'}>
         <MyCarousel />
       </Box>
-    </>
+    </BODY>
   );
 };
 
