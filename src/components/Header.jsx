@@ -129,25 +129,44 @@ const Header = () => {
         mt={'2'}
         h={'30'}
         fontSize={['sm', 'md']}
-        gap={['3', '40']}
+        gap={['3', '0']}
         fontFamily={'Arbutus Slab'}
       >
-        <Link to={'/newarrivals'}>
-          {' '}
-          <HoverableH1>New Arrivals</HoverableH1>
-        </Link>
-        <Link to={'/men'}>
-          <HoverableH1>Men</HoverableH1>
-        </Link>
-        <Link to={'/women'}>
-          <HoverableH1>Women</HoverableH1>
-        </Link>
-        <Link to={'/jewelery'}>
-          <HoverableH1>Jewelery</HoverableH1>
-        </Link>
-        <Link to={'/electronics'}>
-          <HoverableH1>Electronics</HoverableH1>
-        </Link>
+        <Box h={'full'} w={['auto', 'full']}>
+          <Link to={'/newarrivals'} h={'20'} w={'20'}>
+            <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
+              New Arrivals
+            </Center>
+          </Link>
+        </Box>
+        <Box h={'full'} w={['auto', 'full']}>
+          <Link to={'/men'} h={'20'} w={'20'}>
+            <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
+              Men
+            </Center>
+          </Link>
+        </Box>
+        <Box h={'full'} w={['auto', 'full']}>
+          <Link to={'/women'} h={'20'} w={'20'}>
+            <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
+              Women
+            </Center>
+          </Link>
+        </Box>
+        <Box h={'full'} w={['auto', 'full']}>
+          <Link to={'/jewelery'} h={'20'} w={'20'}>
+            <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
+              Jewelery
+            </Center>
+          </Link>
+        </Box>
+        <Box h={'full'} w={['auto', 'full']}>
+          <Link to={'/electronics'} h={'20'} w={'20'}>
+            <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
+              Electronics
+            </Center>
+          </Link>
+        </Box>
       </Center>
     </BODY>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Container, Heading, Image } from '@chakra-ui/react';
-import { Stack, HStack, VStack, Text } from '@chakra-ui/react';
+import { Box, Center, Container, Heading, Image } from '@chakra-ui/react';
 
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -27,6 +26,35 @@ const headingOptions = {
 const Resources = () => {
   return (
     <BODY>
+      <Center
+        px={'20'}
+        display={'flex'}
+        justifyContent={'space-evenly'}
+        h={'20'}
+        bgColor={'green.100'}
+      >
+        <Box h={'full'} w={'full'}>
+          <NavLink to={'/resources/faq'} h={'20'} w={'20'}>
+            <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
+              FAQ
+            </Center>
+          </NavLink>
+        </Box>
+        <Box h={'full'} w={'full'}>
+          <NavLink to={'/resources/blogs'} h={'20'} w={'20'}>
+            <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
+              Blogs
+            </Center>
+          </NavLink>
+        </Box>
+        <Box h={'full'} w={'full'}>
+          <NavLink to={'/resources/support'} h={'20'} w={'20'}>
+            <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
+              Support
+            </Center>
+          </NavLink>
+        </Box>
+      </Center>
       <Box h={['32vh', '90vh']} rounded={'3xl'}>
         <MyCarousel />
       </Box>
