@@ -21,7 +21,7 @@ const Footer = () => {
       <Stack
         direction={['column', 'row']}
         h={['full', '30vh']}
-        bgColor={'#22c55e'}
+        bgColor={'#34d399'}
       >
         <VStack w={['100%', '70%']} px={['12', '20']}>
           <Text fontSize={'3xl'} fontWeight={'bold'}>

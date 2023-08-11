@@ -43,7 +43,7 @@ const Header = () => {
         </Link>
         <HStack>
           <FiShoppingBag size={'27'} />
-          <Box w={'20'} mr={['5', '10']}>
+          <Box w={'20'} mr={['8', '10']}>
             <Link to={'/resources'}>
               <HStack>
                 <VStack>
