@@ -4,6 +4,12 @@ import axios from 'axios';
 import { Container, HStack } from '@chakra-ui/react';
 import ProductCard from './ProductCard';
 import Loader from './Loader';
+import styled from 'styled-components';
+
+const BODY = styled.body`
+  background-color: #dcfce7;
+  font-family: 'Arbutus Slab', serif;
+`;
 
 const Jewelery = () => {
   const [product, setProduct] = useState([]);
@@ -21,29 +27,31 @@ const Jewelery = () => {
     fetchMenProducts();
   }, []);
   return (
-    <Container maxW={'container.xl'}>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <HStack justifyContent={'space-evenly'} wrap={'wrap'}>
-            {product.map(i =>
-              i.category === 'jewelery' ? (
-                <ProductCard
-                  key={i.key}
-                  title={i.title.split('-')[0]}
-                  img={i.image}
-                  price={i.price}
-                  category={i.category}
-                />
-              ) : (
-                console.log('didnt load')
-              )
-            )}
-          </HStack>
-        </>
-      )}
-    </Container>
+    <BODY>
+      <Container maxW={'container.xl'}>
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            <HStack justifyContent={'space-evenly'} wrap={'wrap'}>
+              {product.map(i =>
+                i.category === 'jewelery' ? (
+                  <ProductCard
+                    key={i.key}
+                    title={i.title.split('-')[0]}
+                    img={i.image}
+                    price={i.price}
+                    category={i.category}
+                  />
+                ) : (
+                  console.log('didnt load')
+                )
+              )}
+            </HStack>
+          </>
+        )}
+      </Container>
+    </BODY>
   );
 };
 

@@ -69,7 +69,7 @@ const Header = () => {
           </Box>
 
           <Box w={['40', '25']} mr={['-10', '10']}>
-            <Link to={'/resources'}>
+            <Link to={'/findus'}>
               <HStack>
                 <FiMapPin size={'27'} />
                 <VStack>
