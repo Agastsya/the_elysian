@@ -1,9 +1,14 @@
 import React from 'react';
 import { Stack, Text, Image, Center, Container } from '@chakra-ui/react';
+import styled from 'styled-components';
+
+const BODY = styled.body`
+  font-family: 'Arbutus Slab', serif;
+`;
 
 const Testimonials = () => {
   return (
-    <>
+    <BODY>
       <Center fontSize={'5xl'} pt={'10'}>
         Testimonials
       </Center>
@@ -17,7 +22,13 @@ const Testimonials = () => {
           my={'20'}
           align={['center', 'auto']}
         >
-          <Text pr={['0', '20']}>
+          <Text
+            pr={['0', '20']}
+            bgColor={'whiteAlpha.900'}
+            rounded={'3xl'}
+            py={'2'}
+            px={'1'}
+          >
             {' '}
             "I can't believe the amazing experience I had with this ecommerce
             website! The products are out of this world... literally! I ordered
@@ -39,11 +50,12 @@ const Testimonials = () => {
         </Stack>
         <Stack
           direction={['column', 'row']}
-          px={'10'}
-          py={'10'}
-          my={'20'}
+          px={'30'}
+          py={'30'}
           rounded={'3xl'}
           bgColor={'#34d399'}
+          my={'20'}
+          align={['center', 'auto']}
         >
           <Image
             borderRadius="full"
@@ -52,7 +64,13 @@ const Testimonials = () => {
             alt="Dan Abramov"
             align={['center', 'auto']}
           />
-          <Text pl={['0', '20']}>
+          <Text
+            pl={['0', '20']}
+            bgColor={'whiteAlpha.900'}
+            rounded={'3xl'}
+            py={'2'}
+            px={'1'}
+          >
             {' '}
             "I've been shopping online for years, but I've never come across an
             ecommerce website quite like this one. The range of clothing options
@@ -67,13 +85,19 @@ const Testimonials = () => {
         </Stack>
         <Stack
           direction={['column', 'row']}
-          px={'10'}
-          py={'10'}
+          px={'30'}
+          py={'30'}
           rounded={'3xl'}
           bgColor={'#34d399'}
           my={'20'}
+          align={['center', 'auto']}
         >
-          <Text px={['0', '20']}>
+          <Text
+            px={['3', '21']}
+            bgColor={'whiteAlpha.900'}
+            rounded={'3xl'}
+            py={'2'}
+          >
             {' '}
             "Two things I'm passionate about: staying ahead in fashion and
             keeping up with the latest tech trends. This ecommerce website is a
@@ -95,7 +119,7 @@ const Testimonials = () => {
           />
         </Stack>
       </Container>
-    </>
+    </BODY>
   );
 };
 
