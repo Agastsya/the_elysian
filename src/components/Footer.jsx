@@ -4,13 +4,11 @@ import {
   Text,
   HStack,
   VStack,
-  Center,
   Heading,
   Input,
   Button,
 } from '@chakra-ui/react';
 import { FiInstagram, FiFacebook, FiTwitter } from 'react-icons/fi';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const BODY = styled.body`

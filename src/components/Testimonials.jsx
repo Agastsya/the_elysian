@@ -10,7 +10,9 @@ const Testimonials = () => {
   return (
     <BODY>
       <Center fontSize={'5xl'} pt={'10'}>
-        Testimonials
+        <Text bgColor={'green.400'} rounded={'3xl'} p={'3'}>
+          Testimonials
+        </Text>
       </Center>
       <Container maxW={'container.xl'} gap={'80'}>
         <Stack

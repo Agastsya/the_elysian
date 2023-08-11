@@ -30,7 +30,7 @@ const Home = () => {
             </Text>
           </Stack>
         </Stack>
-        <VStack>
+        <VStack h={['50vh', 'auto']}>
           <Image src={wardrobe} objectFit={'contain'} h={'83.1vh'} />
         </VStack>
       </Stack>
