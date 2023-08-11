@@ -1,30 +1,22 @@
 import { Link } from 'react-router-dom';
 import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
-import {
-  Text,
-  Avatar,
-  HStack,
-  VStack,
-  Box,
-  Center,
-  Image,
-} from '@chakra-ui/react';
+import { Text, Avatar, HStack, VStack, Box, Center } from '@chakra-ui/react';
 import styled from 'styled-components';
-import whale from '../assets/whale.png';
 
 const BODY = styled.body`
   background-color: #dcfce7;
+  font-family: 'Arbutus Slab', serif;
+`;
+const HoverableH1 = styled.h1`
+  &:hover {
+    color: #16a34a;
+  }
 `;
 
 const Header = () => {
   return (
     <BODY>
-      <Center
-        maxW={'100vw'}
-        color={'white'}
-        fontWeight={'bold'}
-        bgColor={'#38A169'}
-      >
+      <Center maxW={'100vw'} color={'white'} bgColor={'#38A169'}>
         <Link to={'/newarrivals'} fontFamily={'Inter'}>
           Check Out New Products
         </Link>
@@ -42,9 +34,10 @@ const Header = () => {
             pr={'2vh'}
             align={'left'}
             fontWeight={'bold'}
-            fontFamily={'Inter'}
+            fontFamily={'Arbutus Slab'}
+            fontSize={'2xl'}
           >
-            thelysian
+            <HoverableH1>thelysian</HoverableH1>
           </Text>
         </Link>
         <HStack>
@@ -59,7 +52,7 @@ const Header = () => {
                     justifyContent={'flex-start'}
                     alignSelf={'flex-start'}
                   >
-                    Resources
+                    <HoverableH1>Resources</HoverableH1>
                   </Text>
                   <Text
                     fontSize={'small'}
@@ -86,7 +79,7 @@ const Header = () => {
                     justifyContent={'flex-start'}
                     alignSelf={'flex-start'}
                   >
-                    Find Us
+                    <HoverableH1>Find Us</HoverableH1>
                   </Text>
                   <Text
                     fontSize={'small'}
@@ -113,7 +106,7 @@ const Header = () => {
                     justifyContent={'flex-start'}
                     alignSelf={'flex-start'}
                   >
-                    Account
+                    <HoverableH1>Account</HoverableH1>
                   </Text>
                   <Text
                     fontSize={'small'}
@@ -136,12 +129,24 @@ const Header = () => {
         h={'30'}
         fontSize={['sm', 'md']}
         gap={['3', '40']}
+        fontFamily={'Arbutus Slab'}
       >
-        <Link to={'/newarrivals'}>New Arrivals</Link>
-        <Link to={'/men'}>Men</Link>
-        <Link to={'/women'}>Women</Link>
-        <Link to={'/jewelery'}>Jewelery</Link>
-        <Link to={'/electronics'}>Electronics</Link>
+        <Link to={'/newarrivals'}>
+          {' '}
+          <HoverableH1>New Arrivals</HoverableH1>
+        </Link>
+        <Link to={'/men'}>
+          <HoverableH1>Men</HoverableH1>
+        </Link>
+        <Link to={'/women'}>
+          <HoverableH1>Women</HoverableH1>
+        </Link>
+        <Link to={'/jewelery'}>
+          <HoverableH1>Jewelery</HoverableH1>
+        </Link>
+        <Link to={'/electronics'}>
+          <HoverableH1>Electronics</HoverableH1>
+        </Link>
       </Center>
     </BODY>
   );

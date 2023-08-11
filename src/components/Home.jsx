@@ -20,11 +20,11 @@ const Home = () => {
             <Text
               color={'blackAlpha.800'}
               fontSize={'5xl'}
-              fontFamily={'Inter'}
+              fontFamily={'Arbutus Slab'}
             >
               Your Summer Wardrobe
             </Text>
-            <Text fontSize={'20'}>
+            <Text fontSize={'20'} fontFamily={'Arbutus Slab'}>
               Enjoy the feel-good vibes of the season with our modern and
               traditional products
             </Text>
