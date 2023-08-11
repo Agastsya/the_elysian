@@ -68,8 +68,8 @@ const MyCarousel = () => {
       autoPlay
       infiniteLoop
       interval={3000}
-      showArrows={true}
-      showStatus={true}
+      showArrows={false}
+      showStatus={false}
       showThumbs={false}
     >
       <Box w={'full'} h={'90vh'}>

@@ -21,14 +21,14 @@ const Footer = () => {
       <Stack
         direction={['column', 'row']}
         h={['full', '30vh']}
-        bgColor={'green.300'}
+        bgColor={'#22c55e'}
       >
         <VStack w={['100%', '70%']} px={['12', '20']}>
           <Text fontSize={'3xl'} fontWeight={'bold'}>
             thelysian
           </Text>
           <Text bgColor={'whiteAlpha.900'} rounded={'3xl'} py={'2'} px={'2'}>
-            "Discover Elegance, Discover The Lysian. Elevate Your Everyday Look
+            "Discover Elegance, Discover thelysian. Elevate Your Everyday Look
             with Our Handpicked Collections. Shop Now and Experience the
             Difference."
           </Text>

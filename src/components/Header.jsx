@@ -97,7 +97,7 @@ const Header = () => {
           </Box>
 
           <Box w={'20'} mr={['16', '24']}>
-            <Link to={'/resources'}>
+            <Link to={'/login'}>
               <HStack>
                 <Avatar name="Agastsya Joshi" />
                 <VStack>

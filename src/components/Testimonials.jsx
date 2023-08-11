@@ -10,7 +10,7 @@ const Testimonials = () => {
   return (
     <BODY>
       <Center fontSize={'5xl'} pt={'10'}>
-        <Text bgColor={'green.400'} rounded={'3xl'} p={'3'}>
+        <Text bgColor={'#34d399'} rounded={'3xl'} p={'3'}>
           Testimonials
         </Text>
       </Center>
