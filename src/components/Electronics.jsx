@@ -33,7 +33,7 @@ const Electronics = () => {
           <Loader />
         ) : (
           <>
-            <HStack justifyContent={'space-evenly'} wrap={'wrap'}>
+            <HStack wrap={'wrap'}>
               {product.map(i =>
                 i.category === 'electronics' ? (
                   <ProductCard

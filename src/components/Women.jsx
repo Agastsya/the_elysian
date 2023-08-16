@@ -33,7 +33,7 @@ const Jewelery = () => {
           <Loader />
         ) : (
           <>
-            <HStack justifyContent={'space-evenly'} wrap={'wrap'}>
+            <HStack wrap={'wrap'}>
               {product.map(i =>
                 i.category === "women's clothing" ? (
                   <ProductCard
