@@ -89,14 +89,14 @@ const ProductDetails = () => {
               <Text fontSize={['xl', '4xl']} fontWeight={'bold'}>
                 Product Description
               </Text>
-              <Text py={['5', '10']} fontSize={['md', 'xl']}>
+              <Text py={['5', '10']} fontSize={['sm', 'xl']} px={['10', '0']}>
                 {product.description}
               </Text>
               <HStack>
                 <Text
                   alignContent={'center'}
-                  fontSize={'2xl'}
-                  fontWeight={'bold'}
+                  fontSize={['md', '2xl']}
+                  fontWeight={['bold']}
                 >
                   Sale Price : ${product.price}
                 </Text>{' '}
