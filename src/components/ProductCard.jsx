@@ -9,6 +9,7 @@ import {
   Image,
   Button,
 } from '@chakra-ui/react';
+import { toast } from 'react-hot-toast';
 
 const ProductCard = ({ img, title, price, category }) => {
   return (
@@ -76,6 +77,7 @@ const ProductCard = ({ img, title, price, category }) => {
             </Text>
           </Stack>
           <Button
+            onClick={() => toast.success('Item Added To Cart')}
             position={'absolute'}
             bottom={'2'}
             h={'7'}

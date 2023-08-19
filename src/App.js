@@ -16,6 +16,7 @@ import Resources from './components/Resources.jsx';
 import Findus from './components/Findus.jsx';
 import Register from './components/Register.jsx';
 import Login from './components/Login.jsx';
+import { Toaster } from 'react-hot-toast';
 
 export const GlobalStyle = styled.body`
   body {
@@ -47,6 +48,7 @@ function App() {
         <Route path={'/login'} element={<Login />} />
       </Routes>
       <Footer />
+      <Toaster />
     </Router>
   );
 }
