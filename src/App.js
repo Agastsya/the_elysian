@@ -17,6 +17,7 @@ import Findus from './components/Findus.jsx';
 import Register from './components/Register.jsx';
 import Login from './components/Login.jsx';
 import { Toaster } from 'react-hot-toast';
+import Faq from './components/Services/Faq.jsx';
 
 export const GlobalStyle = styled.body`
   body {
@@ -37,7 +38,7 @@ function App() {
         <Route path={'/services'} element={<Services />} />
         <Route path={'/contact'} element={<Contact />} />
         <Route path={'newarrivals'} element={<NewArrivals />} />
-        <Route path={'/products:id'} element={<ProductDetails />} />
+        <Route path={'/products/:id'} element={<ProductDetails />} />
         <Route path={'/jewelery'} element={<Jewelery />} />
         <Route path={'/men'} element={<Men />} />
         <Route path={'/electronics'} element={<Electronics />} />
@@ -46,6 +47,7 @@ function App() {
         <Route path={'/findus'} element={<Findus />} />
         <Route path={'/register'} element={<Register />} />
         <Route path={'/login'} element={<Login />} />
+        <Route path="/services/faq" element={<Faq />}></Route>
       </Routes>
       <Footer />
       <Toaster />

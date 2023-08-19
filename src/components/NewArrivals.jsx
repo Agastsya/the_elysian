@@ -41,6 +41,7 @@ const NewArrivals = () => {
                   img={i.image}
                   price={i.price}
                   category={i.category}
+                  id={i.id}
                 />
               ))}
             </HStack>

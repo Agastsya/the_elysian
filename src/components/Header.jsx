@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
 import { Text, Avatar, HStack, VStack, Box, Center } from '@chakra-ui/react';
 import styled from 'styled-components';
+import '../styles/Header.scss';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -11,6 +12,7 @@ const BODY = styled.body`
 const HoverableH1 = styled.h1`
   &:hover {
     color: #16a34a;
+    display: block;
   }
 `;
 
@@ -62,7 +64,15 @@ const Header = () => {
                     color={'gray'}
                     mt={'-1.5vh'}
                   >
-                    FAQ,Blog,Support
+                    <NavLink to={'/resources/faq'} className="nav_link">
+                      FAQ,
+                    </NavLink>
+                    <NavLink to={'/resources/blog'} className="nav_link">
+                      Blog,
+                    </NavLink>
+                    <NavLink to={'/resources/support'} className="nav_link">
+                      Support
+                    </NavLink>
                   </Text>
                 </VStack>
               </HStack>
@@ -89,7 +99,9 @@ const Header = () => {
                     color={'gray'}
                     mt={'-1.5vh'}
                   >
-                    Store Locator
+                    <NavLink to={'/findus'} className="nav_link">
+                      Store Locator
+                    </NavLink>{' '}
                   </Text>
                 </VStack>
               </HStack>
@@ -115,8 +127,11 @@ const Header = () => {
                     as={'i'}
                     color={'gray'}
                     mt={'-1.5vh'}
+                    className="nav_link"
                   >
-                    Sign In
+                    <NavLink to={'/findus'} className="nav_link">
+                      Sign In
+                    </NavLink>{' '}
                   </Text>
                 </VStack>
               </HStack>

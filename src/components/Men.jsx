@@ -43,6 +43,7 @@ const Men = () => {
                     img={i.image}
                     price={i.price}
                     category={i.category}
+                    id={i.id}
                   />
                 ) : (
                   console.log('didnt load')

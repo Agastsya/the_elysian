@@ -1,0 +1,8 @@
+.nav_link {
+  //other styles
+  //...
+  &:hover {
+    cursor: pointer;
+    color: #16a34a;
+  }
+}
