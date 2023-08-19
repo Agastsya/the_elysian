@@ -37,6 +37,7 @@ const ProductDetails = () => {
         height={'100vh'}
         mb={['600px', '0']}
         mt={['5', '20']}
+        fontFamily={'Nunito'}
       >
         <VStack
           w={['100vw', '30vw']}
@@ -49,10 +50,8 @@ const ProductDetails = () => {
             h={['70vh', '90vh']}
             display={['grid']}
             justifyContent={'center'}
-            border={'3px solid #86efac'}
+            border={'1px solid #f0fdf4'}
             borderRadius={['none', '3xl']}
-            fontFamily={'Nunito'}
-            bgColor={'#bbf7d0'}
           >
             <Image
               w={['60vw', '20vw']}
@@ -61,18 +60,11 @@ const ProductDetails = () => {
               mt={'8'}
               p={['0', '10']}
               src={product.image}
-              border={'1px solid #bbf7d0'}
+              border={'2px solid #15803d'}
+              shadow={'dark-lg'}
               borderRadius={'xl'}
               mx={['auto', '0']}
             ></Image>
-            <Text
-              w={['80vw', '20vw']}
-              h={'15vh'}
-              fontSize={['md', 'lg']}
-              fontWeight={'semibold'}
-            >
-              {product.title}
-            </Text>
           </Box>
         </VStack>
         <VStack w={['100vw', '70vw']} h={['90vh']} pl={['0', '5']}>
@@ -80,16 +72,24 @@ const ProductDetails = () => {
             w={'100%'}
             h={'100%'}
             py={['10', '20']}
+            mt={['-32', '0']}
             px={['5', '20']}
-            border={'2px solid #86efac'}
-            borderRadius={['none', '3xl']}
-            bgColor={'#bbf7d0'}
+            bgColor={'#68D391'}
           >
             <VStack display={'grid'} justifyContent={'flex-start'}>
-              <Text fontSize={['xl', '4xl']} fontWeight={'bold'}>
+              <Text
+                w={['80vw', '20vw']}
+                h={'15vh'}
+                fontSize={['md', '2xl']}
+                fontWeight={'bold'}
+                pb={'56'}
+              >
+                {product.title}
+              </Text>
+              <Text fontSize={['xl', 'xl']} fontWeight={'bold'}>
                 Product Description
               </Text>
-              <Text py={['5', '10']} fontSize={['sm', 'xl']} px={['10', '0']}>
+              <Text py={['5', '0']} fontSize={['sm', 'xl']} px={['10', '0']}>
                 {product.description}
               </Text>
               <HStack>
@@ -105,7 +105,13 @@ const ProductDetails = () => {
                 </Text>
                 <Text pl={'52'} fontSize={'2xl'} fontWeight={'bold'}></Text>
               </HStack>
-              <Button bgColor={'#10b981'} mt={'28'} mx={'5'}>
+              <Button
+                bgColor={'#234E52'}
+                mt={'16'}
+                w={['auto', '80']}
+                mx={'5'}
+                color={'white'}
+              >
                 Add To Cart
               </Button>
             </VStack>
