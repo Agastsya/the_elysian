@@ -33,51 +33,63 @@ const ProductDetails = () => {
     <>
       <Stack
         direction={['column', 'row']}
-        mx={'5rem'}
+        mx={['0', '5rem']}
         height={'100vh'}
-        mt={'20'}
+        mb={['600px', '0']}
+        mt={['5', '20']}
       >
-        <VStack w={'30vw'} h={'83.1vh'}>
+        <VStack
+          w={['100vw', '30vw']}
+          px={['2', '0']}
+          h={'83.1vh'}
+          mx={['auto', '0']}
+        >
           <Box
-            w={'100%'}
-            h={'90%'}
-            display={'grid'}
+            w={('400px', '100%')}
+            h={['70vh', '90vh']}
+            display={['grid']}
             justifyContent={'center'}
             border={'3px solid #86efac'}
-            borderRadius={'3xl'}
+            borderRadius={['none', '3xl']}
             fontFamily={'Nunito'}
             bgColor={'#bbf7d0'}
           >
             <Image
-              w={'20vw'}
-              h={'50vh'}
+              w={['60vw', '20vw']}
+              h={['40vh', '50vh']}
               bgColor={'white'}
               mt={'8'}
-              p={'10'}
+              p={['0', '10']}
               src={product.image}
               border={'1px solid #bbf7d0'}
               borderRadius={'xl'}
+              mx={['auto', '0']}
             ></Image>
-            <Text w={'20vw'} h={'15vh'} fontSize={'lg'} fontWeight={'semibold'}>
+            <Text
+              w={['80vw', '20vw']}
+              h={'15vh'}
+              fontSize={['md', 'lg']}
+              fontWeight={'semibold'}
+            >
               {product.title}
             </Text>
           </Box>
         </VStack>
-        <VStack w={'70vw'} h={'90vh'} pl={'5'}>
+        <VStack w={['100vw', '70vw']} h={['90vh']} pl={['0', '5']}>
           <Box
             w={'100%'}
             h={'100%'}
-            py={'20'}
-            px={'20'}
+            py={['10', '20']}
+            px={['5', '20']}
             border={'2px solid #86efac'}
-            borderRadius={'3xl'}
+            borderRadius={['none', '3xl']}
             bgColor={'#bbf7d0'}
           >
             <VStack display={'grid'} justifyContent={'flex-start'}>
-              <Text fontSize={'4xl'} fontWeight={'bold'}>
+              <Text fontSize={['xl', '4xl']} fontWeight={'bold'}>
                 Product Description
               </Text>
-              <Text py={'10'} fontSize={'xl'}>
+              <Text py={['5', '10']} fontSize={['md', 'xl']}>
                 {product.description}
               </Text>
               <HStack>
