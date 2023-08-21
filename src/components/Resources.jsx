@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Center, Heading, Image } from '@chakra-ui/react';
+import { Box, Center, Heading, Image, Text } from '@chakra-ui/react';
 
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -26,6 +26,11 @@ const headingOptions = {
 const Resources = () => {
   return (
     <BODY>
+      <Box display={'grid'} justifyContent={'center'}>
+        <Text fontSize={'5xl'} fontFamily={'Nunito'} fontWeight={'bold'}>
+          OUR RESOURCES
+        </Text>
+      </Box>
       <Center
         px={'20'}
         display={'flex'}
@@ -41,7 +46,7 @@ const Resources = () => {
           </NavLink>
         </Box>
         <Box h={'full'} w={'full'}>
-          <NavLink to={'/resources/blogs'} h={'20'} w={'20'}>
+          <NavLink to={'/resources/blog'} h={'20'} w={'20'}>
             <Center h={'full'} _hover={{ color: 'white', bg: 'green.700' }}>
               Blogs
             </Center>
@@ -72,7 +77,7 @@ const MyCarousel = () => {
       showStatus={false}
       showThumbs={false}
     >
-      <Box w={'full'} h={'90vh'}>
+      <Box h={'90vh'} m={'50px'}>
         <NavLink to={'/resources/faq'}>
           <Image src={astronaut} />
           <Heading
@@ -85,7 +90,7 @@ const MyCarousel = () => {
         </NavLink>
       </Box>
 
-      <Box w={'full'} h={'90vh'}>
+      <Box h={'90vh'} m={'50px'}>
         <NavLink to={'/resources/blogs'}>
           <Image src={samurai} />
           <Heading
@@ -98,7 +103,7 @@ const MyCarousel = () => {
         </NavLink>
       </Box>
 
-      <Box w={'full'} h={'90vh'}>
+      <Box h={'90vh'} m={'50px'}>
         <NavLink to={'/resources/support'}>
           <Image src={tokyomansion} />
           <Heading

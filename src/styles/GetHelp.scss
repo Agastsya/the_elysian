@@ -1,0 +1,23 @@
+.maindiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 5rem;
+  padding-top: 3rem;
+}
+.smalldiv {
+  height: 15rem;
+  width: 25rem;
+  padding: 0 1rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid black;
+  box-shadow: 10px 10px;
+
+  > h2 {
+    font-weight: bold;
+  }
+}

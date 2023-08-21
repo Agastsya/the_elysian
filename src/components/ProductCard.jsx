@@ -9,7 +9,6 @@ import {
   Image,
   Button,
 } from '@chakra-ui/react';
-import { transform } from 'framer-motion';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
@@ -28,7 +27,7 @@ const ProductCard = ({ img, title, price, category, id }) => {
         pos={'relative'}
         zIndex={1}
         position={'relative'}
-        border={'2px solid #22c55e'}
+        border={'2px solid linear(to-l, #20e3b2, #29ffc6)'}
       >
         <Link to={`/products/${id}`}>
           <Box
@@ -93,7 +92,7 @@ const ProductCard = ({ img, title, price, category, id }) => {
           h={'7'}
           w={'60'}
           variant={'solid'}
-          bgColor={'green.300'}
+          bgGradient="linear(to-l, #20e3b2, #29ffc6)"
         >
           {' '}
           Add To Cart

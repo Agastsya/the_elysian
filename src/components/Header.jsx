@@ -19,7 +19,11 @@ const HoverableH1 = styled.h1`
 const Header = () => {
   return (
     <BODY>
-      <Center maxW={'100vw'} color={'white'} bgColor={'#38A169'}>
+      <Center
+        maxW={'100vw'}
+        color={'black'}
+        bgGradient="linear(to-l, #20e3b2, #29ffc6)"
+      >
         <Link to={'/newarrivals'} fontFamily={'Inter'}>
           Check Out New Products
         </Link>

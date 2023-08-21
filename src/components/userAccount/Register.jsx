@@ -23,7 +23,7 @@ const Register = () => {
     <BODY>
       <Container
         maxH={'container.xl'}
-        bgColor={'green.300'}
+        bgGradient="linear(to-l, #20e3b2, #29ffc6)"
         rounded={['auto', '3xl']}
         my={['0', '20']}
         py={['0', '0']}

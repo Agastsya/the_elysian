@@ -19,6 +19,9 @@ import Login from './components/userAccount/Login.jsx';
 //Other Package Imports
 import { Toaster } from 'react-hot-toast';
 import { styled } from 'styled-components';
+import GetHelp from './components/Services/GetHelp.jsx';
+import Blog from './components/Services/Blog.jsx';
+import BlogDetails from './components/Services/BlogDetails.jsx';
 
 export const GlobalStyle = styled.body`
   body {
@@ -64,8 +67,11 @@ function App() {
         {/*Top Right Header Pages*/}
         <Route path={'/resources'} element={<Resources />} />
         <Route path={'/findus'} element={<Findus />} />
-        <Route path={'/services/faq'} element={<Faq />} />
+        <Route path={'/resources/support'} element={<GetHelp />} />
+        <Route path={'/resources/faq'} element={<Faq />} />
         <Route path={'/products/:id'} element={<ProductDetails />} />
+        <Route path={'/resources/blog'} element={<Blog />} />
+        <Route path={'/resources/blog/:id'} element={<BlogDetails />} />
       </Routes>
       <Footer />
       <Toaster />
