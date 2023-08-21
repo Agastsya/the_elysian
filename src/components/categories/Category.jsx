@@ -11,12 +11,13 @@ const BODY = styled.body`
   font-family: 'Arbutus Slab', serif;
 `;
 
-const Category = name => {
+const Category = ({ uniqueName }) => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchMenProducts = async () => {
       try {
+        console.log(uniqueName);
         const { data } = await axios.get(`${server}/products`);
         setProduct(data);
         setLoading(false);
@@ -35,7 +36,7 @@ const Category = name => {
           <>
             <HStack wrap={'wrap'}>
               {product.map(i =>
-                i.category === 'electronics' ? (
+                i.category === uniqueName ? (
                   <ProductCard
                     key={i.key}
                     title={i.title.split('-')[0]}

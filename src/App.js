@@ -39,19 +39,19 @@ function App() {
         <Route path={'/'} element={<Home />} />
         <Route path={'/about'} element={<About />} />
         <Route path={'/contact'} element={<Contact />} />
-        {/*Shopping Pages*/}
 
+        {/*Shopping Pages*/}
         <Route path={'/newarrivals'} element={<NewArrivals />} />
         <Route path={'/jewelery'} element={<Jewelery />} />
         <Route path={'/men'} element={<Men />} />
         <Route path={'/electronics'} element={<Electronics />} />
         <Route path={'/women'} element={<Women />} />
-        {/*User Account Pages*/}
 
+        {/*User Account Pages*/}
         <Route path={'/register'} element={<Register />} />
         <Route path={'/login'} element={<Login />} />
-        {/*Top Right Header Pages*/}
 
+        {/*Top Right Header Pages*/}
         <Route path={'/resources'} element={<Resources />} />
         <Route path={'/findus'} element={<Findus />} />
         <Route path={'/services/faq'} element={<Faq />} />
