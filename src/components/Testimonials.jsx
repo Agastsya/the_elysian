@@ -1,6 +1,17 @@
 import React from 'react';
-import { Stack, Text, Image, Center, Container } from '@chakra-ui/react';
+import {
+  Stack,
+  Text,
+  Image,
+  Center,
+  Container,
+  VStack,
+} from '@chakra-ui/react';
+import { Star } from 'phosphor-react';
 import styled from 'styled-components';
+import test1 from '../assets/test1.png';
+import test2 from '../assets/test2.png';
+import test3 from '../assets/test3.png';
 
 const BODY = styled.body`
   font-family: 'Arbutus Slab', serif;
@@ -9,11 +20,6 @@ const BODY = styled.body`
 const Testimonials = () => {
   return (
     <BODY>
-      <Center fontSize={'5xl'} pt={'10'}>
-        <Text bgColor={'#34d399'} rounded={'3xl'} p={'3'}>
-          Testimonials
-        </Text>
-      </Center>
       <Container maxW={'container.xl'} gap={'80'}>
         <Stack
           direction={['column', 'row']}
@@ -42,13 +48,25 @@ const Testimonials = () => {
             future of retail. I'm definitely coming back to buy a flying car
             next time. 10/10, would teleport again!"
           </Text>
-          <Image
-            borderRadius="100%"
-            w={'10rem'}
-            src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Dan Abramov"
-            align={['center', 'auto']}
-          />
+          <VStack>
+            <Image
+              borderRadius="100%"
+              w={'40rem'}
+              src={test1}
+              alt="Dan Abramov"
+              align={['center', 'auto']}
+            />
+            <Text fontWeight={'bold'} fontFamily={'Nunito'}>
+              Dan Abramov
+            </Text>
+            <Text fontWeight={'bold'} display={'flex'} fontFamily={'Nunito'}>
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />{' '}
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />
+            </Text>
+          </VStack>
         </Stack>
         <Stack
           direction={['column', 'row']}
@@ -59,13 +77,25 @@ const Testimonials = () => {
           my={'20'}
           align={['center', 'auto']}
         >
-          <Image
-            borderRadius="full"
-            boxSize="250px"
-            src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Dan Abramov"
-            align={['center', 'auto']}
-          />
+          <VStack>
+            <Image
+              borderRadius="100%"
+              w={'45rem'}
+              src={test2}
+              alt="Dan Abramov"
+              align={['center', 'auto']}
+            />
+            <Text fontWeight={'bold'} fontFamily={'Nunito'}>
+              Charlotte White
+            </Text>
+            <Text fontWeight={'bold'} display={'flex'} fontFamily={'Nunito'}>
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />{' '}
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />
+            </Text>
+          </VStack>
           <Text
             pl={['0', '20']}
             bgColor={'whiteAlpha.900'}
@@ -113,12 +143,25 @@ const Testimonials = () => {
             delivery. This website is a one-stop shop for fashion-forward
             individuals who also crave the latest gadgets."
           </Text>
-          <Image
-            borderRadius="full"
-            boxSize="250px"
-            src="https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Dan Abramov"
-          />
+          <VStack>
+            <Image
+              borderRadius="100%"
+              w={'45rem'}
+              src={test3}
+              alt="Dan Abramov"
+              align={['center', 'auto']}
+            />
+            <Text fontWeight={'bold'} fontFamily={'Nunito'}>
+              EunYoung{' '}
+            </Text>
+            <Text fontWeight={'bold'} fontFamily={'Nunito'} display={'flex'}>
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />{' '}
+              <Star size={20} style={{ color: 'yellow' }} />
+              <Star size={20} style={{ color: 'yellow' }} />
+            </Text>
+          </VStack>
         </Stack>
       </Container>
     </BODY>

@@ -1,4 +1,4 @@
-import { Container, Center, Text, Box } from '@chakra-ui/react';
+import { Center, Text, Box } from '@chakra-ui/react';
 import React from 'react';
 import '../../styles/GetHelp.scss';
 
