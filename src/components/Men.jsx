@@ -20,7 +20,6 @@ const Men = () => {
         const { data } = await axios.get(`${server}/products`);
         setMenClothes(data);
         setLoading(false);
-        console.log(menClothes);
       } catch (error) {
         console.log('error');
       }
