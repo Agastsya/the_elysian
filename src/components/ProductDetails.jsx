@@ -49,10 +49,14 @@ const ProductDetails = () => {
             h={['70vh', '90vh']}
             display={['grid']}
             justifyContent={'center'}
-            border={'3px solid #86efac'}
-            borderRadius={['none', '3xl']}
             fontFamily={'Nunito'}
-            bgColor={'#bbf7d0'}
+            style={{ 'box-shadow': '10px 10px' }}
+            border="2px solid black"
+            borderRadius={['0', '10px']}
+            bgColor={'whiteAlpha.500'}
+            px={('0', '2rem')}
+            py={'20'}
+            bgGradient="linear(to-l, #20e3b2, #29ffc6)"
           >
             <Image
               w={['60vw', '20vw']}
@@ -81,9 +85,11 @@ const ProductDetails = () => {
             h={'100%'}
             py={['10', '20']}
             px={['5', '20']}
-            border={'2px solid #86efac'}
-            borderRadius={['none', '3xl']}
-            bgColor={'#bbf7d0'}
+            style={{ 'box-shadow': '10px 10px' }}
+            border="2px solid black"
+            borderRadius={['0', '10px']}
+            bgColor={'whiteAlpha.500'}
+            bgGradient="linear(to-l, #20e3b2, #29ffc6)"
           >
             <VStack display={'grid'} justifyContent={'flex-start'}>
               <Text fontSize={['xl', '4xl']} fontWeight={'bold'}>
@@ -106,7 +112,15 @@ const ProductDetails = () => {
                 </Text>
                 <Text pl={'52'} fontSize={'2xl'} fontWeight={'bold'}></Text>
               </HStack>
-              <Button bgColor={'#10b981'} mt={'28'} mx={'5'}>
+              <Button
+                bgColor={'white'}
+                mt={'28'}
+                mx={'5'}
+                style={{ 'box-shadow': '10px 10px' }}
+                border="2px solid black"
+                borderRadius={['0', '10px']}
+                bgGradient="linear(to-l, #20e3b2, #29ffc6)"
+              >
                 Add To Cart
               </Button>
             </VStack>

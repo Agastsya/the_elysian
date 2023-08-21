@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const BODY = styled.body`
-  font-family: 'Arbutus Slab', serif;
+  font-family: 'Nunito', serif;
 `;
 const LABEL = styled.label`
   justify-content: flex-start;
@@ -23,12 +23,18 @@ const Login = () => {
     <BODY>
       <Container
         maxH={'container.xl'}
-        bgGradient="linear(to-l, #20e3b2, #29ffc6)"
         rounded={['auto', '3xl']}
         my={['0', '20']}
         h={'100vh'}
         display={'flex'}
         alignItems={'center'}
+        style={{ 'box-shadow': '10px 10px' }}
+        border="2px solid black"
+        borderRadius={['0', '10px']}
+        bgColor={'whiteAlpha.500'}
+        px={('0', '2rem')}
+        py={'20'}
+        bgGradient="linear(to-l, #20e3b2, #29ffc6)"
       >
         <VStack pt={'10'} alignItems={'flex-start'} w={'80'} mx={'auto'}>
           {' '}

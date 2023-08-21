@@ -28,7 +28,7 @@ const Resources = () => {
     <BODY>
       <Box display={'grid'} justifyContent={'center'}>
         <Text fontSize={'5xl'} fontFamily={'Nunito'} fontWeight={'bold'}>
-          OUR RESOURCES
+          OTHER RESOURCES
         </Text>
       </Box>
       <Center
@@ -60,7 +60,7 @@ const Resources = () => {
           </NavLink>
         </Box>
       </Center>
-      <Box h={['32vh', '90vh']} rounded={'3xl'}>
+      <Box h={['32vh', 'full']} rounded={'3xl'}>
         <MyCarousel />
       </Box>
     </BODY>
@@ -72,12 +72,12 @@ const MyCarousel = () => {
     <Carousel
       autoPlay
       infiniteLoop
-      interval={3000}
+      interval={1000}
       showArrows={false}
       showStatus={false}
       showThumbs={false}
     >
-      <Box h={'90vh'} m={'50px'}>
+      <Box h={'40vh'}>
         <NavLink to={'/resources/faq'}>
           <Image src={astronaut} />
           <Heading
@@ -90,7 +90,7 @@ const MyCarousel = () => {
         </NavLink>
       </Box>
 
-      <Box h={'90vh'} m={'50px'}>
+      <Box h={'40vh'}>
         <NavLink to={'/resources/blogs'}>
           <Image src={samurai} />
           <Heading
@@ -103,7 +103,7 @@ const MyCarousel = () => {
         </NavLink>
       </Box>
 
-      <Box h={'90vh'} m={'50px'}>
+      <Box h={'40vh'}>
         <NavLink to={'/resources/support'}>
           <Image src={tokyomansion} />
           <Heading
