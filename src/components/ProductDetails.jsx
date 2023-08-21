@@ -97,6 +97,7 @@ const ProductDetails = () => {
                   alignContent={'center'}
                   fontSize={['md', '2xl']}
                   fontWeight={['bold']}
+                  fontFamily={'Arbutus Slab'}
                 >
                   Sale Price : ${product.price}
                 </Text>{' '}

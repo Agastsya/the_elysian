@@ -43,8 +43,8 @@ const Testimonials = () => {
             next time. 10/10, would teleport again!"
           </Text>
           <Image
-            borderRadius="full"
-            boxSize="250px"
+            borderRadius="100%"
+            w={'10rem'}
             src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Dan Abramov"
             align={['center', 'auto']}

@@ -15,7 +15,7 @@ const Category = ({ uniqueName }) => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const fetchMenProducts = async () => {
+    const fetchCategoryProducts = async () => {
       try {
         console.log(uniqueName);
         const { data } = await axios.get(`${server}/products`);
@@ -25,8 +25,8 @@ const Category = ({ uniqueName }) => {
         console.log('error');
       }
     };
-    fetchMenProducts();
-  }, []);
+    fetchCategoryProducts();
+  });
   return (
     <BODY>
       <Container maxW={'container.xl'}>
@@ -34,7 +34,7 @@ const Category = ({ uniqueName }) => {
           <Loader />
         ) : (
           <>
-            <HStack wrap={'wrap'}>
+            <HStack justifyContent={['space-evenly', 'normal']} wrap={'wrap'}>
               {product.map(i =>
                 i.category === uniqueName ? (
                   <ProductCard

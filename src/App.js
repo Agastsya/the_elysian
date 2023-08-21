@@ -7,10 +7,8 @@ import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
 import NewArrivals from './components/categories/NewArrivals.jsx';
 import ProductDetails from './components/ProductDetails.jsx';
-import Men from './components/categories/Men.jsx';
-import Jewelery from './components/categories/Jewelery.jsx';
-import Electronics from './components/categories/Electronics.jsx';
-import Women from './components/categories/Women.jsx';
+
+import Category from './components/categories/Category.jsx';
 // Top Right Header Links
 import Resources from './components/Resources.jsx';
 import Findus from './components/Findus.jsx';
@@ -42,10 +40,22 @@ function App() {
 
         {/*Shopping Pages*/}
         <Route path={'/newarrivals'} element={<NewArrivals />} />
-        <Route path={'/jewelery'} element={<Jewelery />} />
-        <Route path={'/men'} element={<Men />} />
-        <Route path={'/electronics'} element={<Electronics />} />
-        <Route path={'/women'} element={<Women />} />
+        <Route
+          path={'/jewelery'}
+          element={<Category uniqueName="jewelery" />}
+        />
+        <Route
+          path={'/men'}
+          element={<Category uniqueName="men's clothing" />}
+        />
+        <Route
+          path={'/electronics'}
+          element={<Category uniqueName="electronics" />}
+        />
+        <Route
+          path={'/women'}
+          element={<Category uniqueName="women's clothing" />}
+        />
 
         {/*User Account Pages*/}
         <Route path={'/register'} element={<Register />} />
