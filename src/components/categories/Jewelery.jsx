@@ -1,9 +1,9 @@
-import { server } from '../index';
+import { server } from '../../index';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, HStack } from '@chakra-ui/react';
-import ProductCard from './ProductCard';
-import Loader from './Loader';
+import ProductCard from '../ProductCard';
+import Loader from '../Loader';
 import styled from 'styled-components';
 
 const BODY = styled.body`
@@ -11,20 +11,20 @@ const BODY = styled.body`
   font-family: 'Arbutus Slab', serif;
 `;
 
-const NewArrivals = () => {
-  const [products, setProducts] = useState([]);
+const Jewelery = () => {
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchMenProducts = async () => {
       try {
         const { data } = await axios.get(`${server}/products`);
-        setProducts(data);
+        setProduct(data);
         setLoading(false);
       } catch (error) {
         console.log('error');
       }
     };
-    fetchProducts();
+    fetchMenProducts();
   }, []);
   return (
     <BODY>
@@ -34,16 +34,20 @@ const NewArrivals = () => {
         ) : (
           <>
             <HStack justifyContent={'space-evenly'} wrap={'wrap'}>
-              {products.map(i => (
-                <ProductCard
-                  key={i.key}
-                  title={i.title.split('-')[0]}
-                  img={i.image}
-                  price={i.price}
-                  category={i.category}
-                  id={i.id}
-                />
-              ))}
+              {product.map(i =>
+                i.category === 'jewelery' ? (
+                  <ProductCard
+                    key={i.key}
+                    title={i.title.split('-')[0]}
+                    img={i.image}
+                    price={i.price}
+                    category={i.category}
+                    id={i.id}
+                  />
+                ) : (
+                  console.log('didnt load')
+                )
+              )}
             </HStack>
           </>
         )}
@@ -52,4 +56,4 @@ const NewArrivals = () => {
   );
 };
 
-export default NewArrivals;
+export default Jewelery;

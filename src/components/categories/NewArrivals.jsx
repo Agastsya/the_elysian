@@ -1,9 +1,9 @@
-import { server } from '../index';
+import { server } from '../../index';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, HStack } from '@chakra-ui/react';
-import ProductCard from './ProductCard';
-import Loader from './Loader';
+import ProductCard from '../ProductCard';
+import Loader from '../Loader';
 import styled from 'styled-components';
 
 const BODY = styled.body`
@@ -11,21 +11,21 @@ const BODY = styled.body`
   font-family: 'Arbutus Slab', serif;
 `;
 
-const Men = () => {
-  const [menClothes, setMenClothes] = useState([]);
+const NewArrivals = () => {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const fetchMenProducts = async () => {
+    const fetchProducts = async () => {
       try {
         const { data } = await axios.get(`${server}/products`);
-        setMenClothes(data);
+        setProducts(data);
         setLoading(false);
       } catch (error) {
         console.log('error');
       }
     };
-    fetchMenProducts();
-  });
+    fetchProducts();
+  }, []);
   return (
     <BODY>
       <Container maxW={'container.xl'}>
@@ -34,20 +34,16 @@ const Men = () => {
         ) : (
           <>
             <HStack justifyContent={'space-evenly'} wrap={'wrap'}>
-              {menClothes.map(i =>
-                i.category === "men's clothing" ? (
-                  <ProductCard
-                    key={i.key}
-                    title={i.title.split('-')[0]}
-                    img={i.image}
-                    price={i.price}
-                    category={i.category}
-                    id={i.id}
-                  />
-                ) : (
-                  console.log('didnt load')
-                )
-              )}
+              {products.map(i => (
+                <ProductCard
+                  key={i.key}
+                  title={i.title.split('-')[0]}
+                  img={i.image}
+                  price={i.price}
+                  category={i.category}
+                  id={i.id}
+                />
+              ))}
             </HStack>
           </>
         )}
@@ -56,4 +52,4 @@ const Men = () => {
   );
 };
 
-export default Men;
+export default NewArrivals;

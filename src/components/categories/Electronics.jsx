@@ -1,9 +1,9 @@
-import { server } from '../index';
+import { server } from '../../index';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, HStack } from '@chakra-ui/react';
-import ProductCard from './ProductCard';
-import Loader from './Loader';
+import ProductCard from '../ProductCard';
+import Loader from '../Loader';
 import styled from 'styled-components';
 
 const BODY = styled.body`
@@ -11,7 +11,7 @@ const BODY = styled.body`
   font-family: 'Arbutus Slab', serif;
 `;
 
-const Jewelery = () => {
+const Electronics = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -33,9 +33,9 @@ const Jewelery = () => {
           <Loader />
         ) : (
           <>
-            <HStack justifyContent={'space-evenly'} wrap={'wrap'}>
+            <HStack wrap={'wrap'}>
               {product.map(i =>
-                i.category === 'jewelery' ? (
+                i.category === 'electronics' ? (
                   <ProductCard
                     key={i.key}
                     title={i.title.split('-')[0]}
@@ -56,4 +56,4 @@ const Jewelery = () => {
   );
 };
 
-export default Jewelery;
+export default Electronics;

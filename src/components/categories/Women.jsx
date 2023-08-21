@@ -1,9 +1,9 @@
-import { server } from '../index';
+import { server } from '../../index';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, HStack } from '@chakra-ui/react';
-import ProductCard from './ProductCard';
-import Loader from './Loader';
+import ProductCard from '../ProductCard';
+import Loader from '../Loader';
 import styled from 'styled-components';
 
 const BODY = styled.body`
