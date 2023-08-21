@@ -5,10 +5,15 @@ import '../../styles/GetHelp.scss';
 const GetHelp = () => {
   return (
     <>
-      <Box w={'100vw'} h={'40vh'} bgGradient="linear(to-l, #20e3b2, #29ffc6)">
-        <Center w={'100vw'} h={'40vh'} borderRadius={'3xl'}>
+      <Box
+        className="mainbody"
+        w={'full'}
+        h={'40vh'}
+        bgGradient="linear(to-l, #20e3b2, #29ffc6)"
+      >
+        <Center w={'full'} h={'40vh'} borderRadius={'3xl'}>
           <Text
-            fontSize={'4xl'}
+            fontSize={['xl', '4xl']}
             fontWeight={'extrabold'}
             pt={['10', '6']}
             zIndex={'1'}
@@ -16,18 +21,15 @@ const GetHelp = () => {
             border="2px solid black"
             borderRadius={'10px'}
             bgColor={'whiteAlpha.500'}
-            px={'2rem'}
+            px={['0rem', '2rem']}
+            width={'full'}
           >
             How Can We Help You Today?
           </Text>
         </Center>
       </Box>
 
-      <Container
-        maxH={'container.xl'}
-        maxW={'container.xl'}
-        h={['100vh', '120vh']}
-      >
+      <Box maxH={'full'} maxW={'full'} h={['full', '120vh']}>
         <div className="maindiv">
           <div className="div1 smalldiv">
             <svg
@@ -128,7 +130,7 @@ const GetHelp = () => {
             </p>
           </div>
         </div>
-      </Container>
+      </Box>
     </>
   );
 };
