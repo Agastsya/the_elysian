@@ -35,7 +35,11 @@ const BlogDetails = () => {
               {currentBlog.content}
             </Text>
             {/* Other components or data display */}
-            <Text fontWeight={'bold'}>{currentBlog.author}</Text>
+            <Text fontWeight={'bold'}>Written By {currentBlog.author}</Text>
+            <Text fontWeight={'bold'} pt={'10'}>
+              {' '}
+              Published on {currentBlog.published_date}
+            </Text>
           </Box>
         </Stack>
       )}
