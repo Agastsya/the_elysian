@@ -19,6 +19,7 @@ const ProductCard = ({ img, title, price, category, id }) => {
         fontFamily={'Nunito'}
         role={'group'}
         p={6}
+        mx={'1'}
         w={'290px'}
         h={'390px'}
         bg={useColorModeValue('white', 'gray.800')}
@@ -27,7 +28,10 @@ const ProductCard = ({ img, title, price, category, id }) => {
         pos={'relative'}
         zIndex={1}
         position={'relative'}
-        border={'2px solid linear(to-l, #20e3b2, #29ffc6)'}
+        style={{ 'box-shadow': '10px 10px' }}
+        border="2px solid black"
+        borderRadius={['0', '10px']}
+        bgColor={'white'}
       >
         <Link to={`/products/${id}`}>
           <Box
@@ -91,7 +95,12 @@ const ProductCard = ({ img, title, price, category, id }) => {
           bottom={'2'}
           h={'7'}
           w={'60'}
+          mt={'20'}
           variant={'solid'}
+          style={{ 'box-shadow': '4px 4px' }}
+          border="2px solid black"
+          borderRadius={['0', '10px']}
+          bgColor={'whiteAlpha.500'}
           bgGradient="linear(to-l, #20e3b2, #29ffc6)"
         >
           {' '}

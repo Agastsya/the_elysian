@@ -133,7 +133,7 @@ const Header = () => {
                     mt={'-1.5vh'}
                     className="nav_link"
                   >
-                    <NavLink to={'/findus'} className="nav_link">
+                    <NavLink to={'/login'} className="nav_link">
                       Sign In
                     </NavLink>{' '}
                   </Text>

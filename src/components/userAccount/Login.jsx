@@ -45,7 +45,15 @@ const Login = () => {
           <Input type="email" bgColor={'white'} />
           <LABEL>Password</LABEL>
           <Input type="password" bgColor={'white'} />
-          <Button w={'80'} alignContent={'center'}>
+          <Button
+            w={'80'}
+            alignContent={'center'}
+            style={{ 'box-shadow': '4px 4px' }}
+            border="2px solid black"
+            borderRadius={['0', '10px']}
+            bgColor={'whiteAlpha.500'}
+            bgGradient="linear(to-l, #20e3b2, #29ffc6)"
+          >
             Log In
           </Button>
           <Text>
