@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Stack,
-  Text,
-  Image,
-  Center,
-  Container,
-  VStack,
-} from '@chakra-ui/react';
+import { Stack, Text, Image, Container, VStack } from '@chakra-ui/react';
 import { Star } from 'phosphor-react';
 import styled from 'styled-components';
 import test1 from '../assets/test1.png';

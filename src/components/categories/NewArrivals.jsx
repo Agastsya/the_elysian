@@ -1,10 +1,12 @@
 import { server } from '../../index';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, HStack } from '@chakra-ui/react';
 import ProductCard from '../ProductCard';
 import Loader from '../Loader';
 import styled from 'styled-components';
+import PageState from '../context/PageState';
+import PageContext from '../context/PageContext';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -14,12 +16,15 @@ const BODY = styled.body`
 const NewArrivals = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const a = useContext(PageContext);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const { data } = await axios.get(`${server}/products`);
         setProducts(data);
         setLoading(false);
+        a.setTotalItems(data);
       } catch (error) {
         console.log('error');
       }
@@ -42,6 +47,7 @@ const NewArrivals = () => {
                   price={i.price}
                   category={i.category}
                   id={i.id}
+                  prod={i}
                 />
               ))}
             </HStack>

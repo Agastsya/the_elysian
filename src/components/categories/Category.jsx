@@ -44,6 +44,7 @@ const Category = ({ uniqueName }) => {
                     price={i.price}
                     category={i.category}
                     id={i.id}
+                    prod={i}
                   />
                 ) : (
                   console.log('didnt load')

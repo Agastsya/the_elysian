@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Box,
   Center,
@@ -9,10 +7,13 @@ import {
   Image,
   Button,
 } from '@chakra-ui/react';
-import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import PageContext from './context/PageContext';
 
-const ProductCard = ({ img, title, price, category, id }) => {
+const ProductCard = ({ img, title, price, id, prod }) => {
+  const { addToCart } = useContext(PageContext);
+
   return (
     <Center py={12}>
       <Box
@@ -90,7 +91,7 @@ const ProductCard = ({ img, title, price, category, id }) => {
         </Link>
 
         <Button
-          onClick={() => toast.success('Item Added To Cart')}
+          onClick={() => addToCart(prod)}
           position={'absolute'}
           bottom={'2'}
           h={'7'}

@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
-import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
+import { FiShoppingBag, FiMapPin, FiShoppingCart } from 'react-icons/fi';
 import { Text, Avatar, HStack, VStack, Box, Center } from '@chakra-ui/react';
 import styled from 'styled-components';
 import '../styles/Header.scss';
@@ -138,6 +138,30 @@ const Header = () => {
                     </NavLink>{' '}
                   </Text>
                 </VStack>
+              </HStack>
+            </Link>
+          </Box>
+          <Box w={'20'} mr={['16', '5']}>
+            <Link to={'/cart'}>
+              <HStack>
+                <Text
+                  fontSize={'small'}
+                  font
+                  as={'i'}
+                  color={'gray'}
+                  mt={'-1.5vh'}
+                  className="nav_link"
+                >
+                  <FiShoppingCart size={'30'} />
+                </Text>
+                <Text
+                  fontSize={'smaller'}
+                  fontWeight={'bold'}
+                  justifyContent={'flex-start'}
+                  alignSelf={'flex-start'}
+                >
+                  <HoverableH1>Cart</HoverableH1>
+                </Text>
               </HStack>
             </Link>
           </Box>

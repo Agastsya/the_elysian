@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { server } from '../index';
 import axios from 'axios';
 import {
@@ -12,23 +12,36 @@ import {
   Button,
 } from '@chakra-ui/react';
 import '../styles/productdetails.scss';
+import PageContext from './context/PageContext';
+
+const buttonstyle = {
+  style: {
+    boxShadow: '4px 4px',
+    border: '2px solid black',
+    borderRadius: ['0', '10px'],
+    bgColor: 'whiteAlpha.500',
+    bgGradient: 'linear(to-l, #20e3b2, #29ffc6)',
+    mb: '20',
+    mx: '28',
+    mt: '20',
+  },
+};
 
 const ProductDetails = () => {
   const params = useParams();
   const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { addToCart } = useContext(PageContext);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const { data } = await axios.get(`${server}/products/${params.id}`);
         setProduct(data);
-        setLoading(false);
       } catch (error) {
         console.log('error');
       }
     };
     fetchProducts();
-  }, []);
+  });
   return (
     <>
       <Stack
@@ -113,13 +126,10 @@ const ProductDetails = () => {
                 <Text pl={'52'} fontSize={'2xl'} fontWeight={'bold'}></Text>
               </HStack>
               <Button
-                bgColor={'white'}
-                mt={'28'}
-                mx={'5'}
-                style={{ 'box-shadow': '10px 10px' }}
-                border="2px solid black"
-                borderRadius={['0', '10px']}
-                bgGradient="linear(to-l, #20e3b2, #29ffc6)"
+                {...buttonstyle}
+                onClick={() => {
+                  addToCart(product);
+                }}
               >
                 Add To Cart
               </Button>
