@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import React, { useState, useEffect, useContext } from 'react';
 import { server } from '../index';
 import axios from 'axios';
@@ -15,16 +15,13 @@ import '../styles/productdetails.scss';
 import PageContext from './context/PageContext';
 
 const buttonstyle = {
-  style: {
-    boxShadow: '4px 4px',
-    border: '2px solid black',
-    borderRadius: ['0', '10px'],
-    bgColor: 'whiteAlpha.500',
-    bgGradient: 'linear(to-l, #20e3b2, #29ffc6)',
-    mb: '20',
-    mx: '28',
-    mt: '20',
-  },
+  boxShadow: '4px 4px',
+  border: '2px solid black',
+  borderRadius: ['0', '10px'],
+  bgColor: 'whiteAlpha.500',
+  mx: 'auto',
+  mt: '5',
+  mr: '-5',
 };
 
 const ProductDetails = () => {
@@ -44,6 +41,16 @@ const ProductDetails = () => {
   });
   return (
     <>
+      <Link to={'/cart'}>
+        <Button
+          {...buttonstyle}
+          mx={'85vw'}
+          bgGradient={'linear(to-l, #20e3b2, #29ffc6)'}
+        >
+          {' '}
+          Your Cart
+        </Button>
+      </Link>
       <Stack
         direction={['column', 'row']}
         mx={['0', '5rem']}
