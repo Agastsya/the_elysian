@@ -41,7 +41,17 @@ const Cart = () => {
     <>
       <Stack direction={'column'} minH={'100vh'}>
         {cartItems.length === 0 ? (
-          <Text mx={'auto'} fontSize={'4xl'}>
+          <Text
+            mx={'auto'}
+            fontSize={'4xl'}
+            bgGradient="linear(to-l, #20e3b2, #29ffc6)"
+            w={['100vw', '100vw']}
+            textAlign={'center'}
+            h={['100vh', '100vh']}
+            fontFamily={'Arbutus Slab'}
+            verticalAlign={'middle'}
+            lineHeight={'100vh'}
+          >
             Cart Is Empty
           </Text>
         ) : (

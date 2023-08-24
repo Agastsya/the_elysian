@@ -23,6 +23,8 @@ const GetHelp = () => {
             bgColor={'whiteAlpha.500'}
             px={['0rem', '2rem']}
             width={'full'}
+            textAlign={'center'}
+            w={'fit-content'}
           >
             How Can We Help You Today?
           </Text>

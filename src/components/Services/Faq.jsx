@@ -14,12 +14,7 @@ import data from './FaqData';
 const Faq = () => {
   return (
     <>
-      <Box
-        w={'full'}
-        h={'40vh'}
-        bgGradient="linear(to-l, #20e3b2, #29ffc6)"
-        maxW={'100vw'}
-      >
+      <Box w={'full'} h={'40vh'} maxW={'100vw'}>
         <Center w={'full'} h={'40vh'} borderRadius={'3xl'} maxW={'full'}>
           <Text
             fontSize={'4xl'}
@@ -31,6 +26,7 @@ const Faq = () => {
             borderRadius={'10px'}
             bgColor={'whiteAlpha.500'}
             px={['0', '2rem']}
+            bgGradient="linear(to-l, #20e3b2, #29ffc6)"
           >
             Frequently Asked Questions
           </Text>

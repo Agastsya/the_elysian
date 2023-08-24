@@ -44,7 +44,7 @@ const ProductDetails = () => {
       <Link to={'/cart'}>
         <Button
           {...buttonstyle}
-          mx={'85vw'}
+          mx={['-0.9', '85vw']}
           bgGradient={'linear(to-l, #20e3b2, #29ffc6)'}
         >
           {' '}

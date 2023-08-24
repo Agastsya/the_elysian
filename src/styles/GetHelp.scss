@@ -38,6 +38,10 @@
     width: 18rem;
     margin: 0 auto;
     margin-bottom: 40px;
+    &:hover {
+      transform: scale(1.2);
+      transform-origin: center;
+    }
     > h2 {
       font-weight: bold;
     }
