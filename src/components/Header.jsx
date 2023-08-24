@@ -142,7 +142,7 @@ const Header = () => {
               </HStack>
             </Link>
           </Box>
-          <Box w={'20'} mr={['16', '5']}>
+          <Box w={'20'} mr={['5', '5']}>
             <Link to={'/cart'}>
               <HStack>
                 <Text
