@@ -137,6 +137,7 @@ const ProductDetails = () => {
                 onClick={() => {
                   addToCart(product);
                 }}
+                mr={['5', 'auto']}
               >
                 Add To Cart
               </Button>
