@@ -17,7 +17,10 @@
   cursor: pointer;
   border: 2px solid black;
   box-shadow: 10px 10px;
-
+  &:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+  }
   > h2 {
     font-weight: bold;
   }
