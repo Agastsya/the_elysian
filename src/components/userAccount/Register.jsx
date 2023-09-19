@@ -66,11 +66,7 @@ const Register = () => {
             <Heading pb={'10'} pt={'10'} mx={'auto'}>
               Register
             </Heading>
-            <form
-              onSubmit={e => {
-                submitHandler();
-              }}
-            >
+            <form onSubmit={submitHandler}>
               <LABEL>Name</LABEL>
               <Input
                 type="text"
