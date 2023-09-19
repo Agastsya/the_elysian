@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { apiserver } from '../..';
+import toast from 'react-hot-toast';
 
 const BODY = styled.body`
   font-family: 'Nunito', serif;
@@ -26,16 +27,21 @@ const Login = () => {
 
   const submitHandler = async e => {
     e.preventDefault();
-    axios.post(
-      `${apiserver}/login`,
-      { email, password },
-      {
-        header: {
-          'Content-type': 'application/json',
-        },
-        withCredentials: true,
-      }
-    );
+    try {
+      const { data } = axios.post(
+        `${apiserver}/login`,
+        { email, password },
+        {
+          header: {
+            'Content-type': 'application/json',
+          },
+          withCredentials: true,
+        }
+      );
+      toast.success(data.message);
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   return (
