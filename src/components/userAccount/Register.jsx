@@ -43,7 +43,7 @@ const Register = () => {
       );
       toast.success(data.message);
     } catch (error) {
-      toast.error(error.response.data.message || 'Failed');
+      toast.error(error);
     }
   };
 
