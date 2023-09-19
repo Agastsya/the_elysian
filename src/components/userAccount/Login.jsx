@@ -26,12 +26,14 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const submitHandler = async e => {
-    console.log('working 1');
-    e.preventDefault();
     try {
+      e.preventDefault();
       const { data } = await axios.post(
         `${apiserver}/login`,
-        { email, password },
+        {
+          email,
+          password,
+        },
         {
           headers: {
             'Content-Type': 'application/json',
@@ -39,12 +41,8 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      console.log('working 2');
-
       toast.success(data.message);
     } catch (error) {
-      console.log('working 3');
-
       toast.error(error.response.data.message);
     }
   };
