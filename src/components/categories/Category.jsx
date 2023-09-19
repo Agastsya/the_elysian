@@ -27,7 +27,6 @@ const Category = ({ uniqueName }) => {
   useEffect(() => {
     const fetchCategoryProducts = async () => {
       try {
-        console.log(uniqueName);
         const { data } = await axios.get(`${server}/products`);
         setProduct(data);
         setLoading(false);

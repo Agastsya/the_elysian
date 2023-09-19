@@ -10,9 +10,9 @@ import {
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { apiserver } from '../..';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { apiserver } from '../../index';
 
 const BODY = styled.body`
   font-family: 'Nunito', serif;
@@ -32,7 +32,7 @@ const Register = () => {
     try {
       console.log('working');
       const { data } = await axios.post(
-        `https://backend-thelysian.onrender.com/api/v1/user/new`,
+        `${apiserver}/new`,
         { name, email, password },
         {
           headers: {
@@ -41,9 +41,9 @@ const Register = () => {
           withCredentials: true,
         }
       );
-      toast.success('Successfully logged in');
+      toast.success(data.message);
     } catch (error) {
-      toast.error('Failed');
+      toast.error(error.response.data.message);
     }
   };
 

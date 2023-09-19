@@ -39,7 +39,7 @@ const NewArrivals = () => {
       }
     };
     fetchProducts();
-  }, []);
+  });
   return (
     <BODY>
       <Container maxW={'container.xl'}>
