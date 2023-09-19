@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   VStack,
   Container,
@@ -9,6 +9,8 @@ import {
 } from '@chakra-ui/react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import { apiserver } from '../..';
 
 const BODY = styled.body`
   font-family: 'Nunito', serif;
@@ -19,6 +21,23 @@ const LABEL = styled.label`
 `;
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const submitHandler = async e => {
+    e.preventDefault();
+    axios.post(
+      `${apiserver}/login`,
+      { email, password },
+      {
+        header: {
+          'Content-type': 'application/json',
+        },
+        withCredentials: true,
+      }
+    );
+  };
+
   return (
     <BODY>
       <Container
@@ -41,21 +60,34 @@ const Login = () => {
           <Heading pb={'10'} pt={'10'}>
             Login
           </Heading>
-          <LABEL>Email</LABEL>
-          <Input type="email" bgColor={'white'} />
-          <LABEL>Password</LABEL>
-          <Input type="password" bgColor={'white'} />
-          <Button
-            w={'80'}
-            alignContent={'center'}
-            style={{ 'box-shadow': '4px 4px' }}
-            border="2px solid black"
-            borderRadius={['0', '10px']}
-            bgColor={'whiteAlpha.500'}
-            bgGradient="linear(to-l, #20e3b2, #29ffc6)"
-          >
-            Log In
-          </Button>
+          <form onSubmit={submitHandler}>
+            <LABEL>Email</LABEL>
+            <Input
+              type="email"
+              bgColor={'white'}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+            <LABEL>Password</LABEL>
+            <Input
+              type="password"
+              bgColor={'white'}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+            <Button
+              w={'80'}
+              alignContent={'center'}
+              style={{ 'box-shadow': '4px 4px' }}
+              border="2px solid black"
+              borderRadius={['0', '10px']}
+              bgColor={'whiteAlpha.500'}
+              bgGradient="linear(to-l, #20e3b2, #29ffc6)"
+              type="submit"
+            >
+              Log In
+            </Button>
+          </form>
           <Text>
             New Here{' '}
             <NavLink style={{ color: '#2563eb' }} to={'/register'}>
