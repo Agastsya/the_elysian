@@ -40,7 +40,13 @@ const Register = () => {
               Register
             </Heading>
             <LABEL>Name</LABEL>
-            <Input type="name" name="username" bgColor={'white'} />
+            <Input
+              type="name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              name="username"
+              bgColor={'white'}
+            />
             <LABEL>Mobile Number</LABEL>
             <Input type="number" bgColor={'white'} />
             <LABEL>Email</LABEL>
