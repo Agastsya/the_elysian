@@ -28,7 +28,7 @@ const Login = () => {
   const submitHandler = async e => {
     e.preventDefault();
     try {
-      const { data } = axios.post(
+      const { data } = await axios.post(
         `${apiserver}/login`,
         { email, password },
         {

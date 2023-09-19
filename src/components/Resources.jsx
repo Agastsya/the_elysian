@@ -91,7 +91,7 @@ const MyCarousel = () => {
       </Box>
 
       <Box h={'40vh'}>
-        <NavLink to={'/resources/blogs'}>
+        <NavLink to={'/resources/blog'}>
           <Image src={samurai} />
           <Heading
             color={'black'}
