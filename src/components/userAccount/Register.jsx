@@ -30,8 +30,9 @@ const Register = () => {
   const submitHandler = async e => {
     e.preventDefault();
     try {
+      console.log('working');
       const { data } = await axios.post(
-        `${apiserver}/api/v1/user/new`,
+        `https://backend-thelysian.onrender.com/api/v1/user/new`,
         { name, email, password },
         {
           headers: {
@@ -40,9 +41,9 @@ const Register = () => {
           withCredentials: true,
         }
       );
-      toast.success(data.message);
+      toast.success('Successfully logged in');
     } catch (error) {
-      toast.error(error.data.message);
+      toast.error('Failed');
     }
   };
 
