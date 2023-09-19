@@ -32,8 +32,8 @@ const Login = () => {
         `${apiserver}/login`,
         { email, password },
         {
-          header: {
-            'Content-type': 'application/json',
+          headers: {
+            'Content-Type': 'application/json',
           },
           withCredentials: true,
         }
