@@ -30,7 +30,6 @@ const Register = () => {
   const submitHandler = async e => {
     e.preventDefault();
     try {
-      console.log('working');
       const { data } = await axios.post(
         `${apiserver}/new`,
         { name, email, password },
@@ -43,7 +42,7 @@ const Register = () => {
       );
       toast.success(data.message);
     } catch (error) {
-      console.log(error);
+      console.log('Not working');
       toast.error(error.response.data.message);
     }
   };
