@@ -1,6 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
-import { FiShoppingBag, FiMapPin, FiShoppingCart } from 'react-icons/fi';
-import { BsCart4 } from 'react-icons/bs';
+import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
 import { Text, Avatar, HStack, VStack, Box, Center } from '@chakra-ui/react';
 import styled from 'styled-components';
 import '../styles/Header.scss';
