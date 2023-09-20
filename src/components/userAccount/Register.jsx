@@ -42,7 +42,6 @@ const Register = () => {
       );
       toast.success(data.message);
     } catch (error) {
-      console.log('Not working');
       toast.error(error.response.data.message);
     }
   };
