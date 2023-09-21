@@ -50,6 +50,7 @@ const Register = () => {
       navigate('/');
     } catch (error) {
       toast.error(error.response.data.message);
+      setLoader(false);
     }
   };
 
