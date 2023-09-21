@@ -1,8 +1,17 @@
 import { Link, NavLink } from 'react-router-dom';
 import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
-import { Text, Avatar, HStack, VStack, Box, Center } from '@chakra-ui/react';
+import {
+  Text,
+  Avatar,
+  HStack,
+  VStack,
+  Box,
+  Center,
+  Button,
+} from '@chakra-ui/react';
 import styled from 'styled-components';
 import '../styles/Header.scss';
+import SearchFilter from './searchfilter/SearchFilter';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -18,7 +27,7 @@ const HoverableH1 = styled.h1`
 
 const Header = () => {
   return (
-    <BODY>
+    <BODY style={{ position: 'relative' }}>
       <Center
         maxW={'100vw'}
         color={'black'}
@@ -47,6 +56,11 @@ const Header = () => {
             <HoverableH1>thelysian</HoverableH1>
           </Text>
         </Link>
+        <HStack>
+          <Button _hover={{ backgroundColor: 'green.500' }}>Search</Button>
+        </HStack>
+
+        <SearchFilter />
         <HStack>
           <FiShoppingBag size={'27'} />
           <Box w={'20'} mr={['8', '10']}>

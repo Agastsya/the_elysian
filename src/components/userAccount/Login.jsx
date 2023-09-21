@@ -11,7 +11,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { apiserver } from '../..';
 import toast from 'react-hot-toast';
 import Loader from '../Loader';
 

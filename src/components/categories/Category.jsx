@@ -6,6 +6,7 @@ import ProductCard from '../ProductCard';
 import Loader from '../Loader';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import SearchFilter from '../searchfilter/SearchFilter';
 
 const BODY = styled.body`
   background-color: #dcfce7;
