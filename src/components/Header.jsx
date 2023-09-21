@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react';
 import styled from 'styled-components';
 import '../styles/Header.scss';
-import SearchFilter from './searchfilter/SearchFilter';
 
 const BODY = styled.body`
   background-color: #dcfce7;

@@ -75,7 +75,7 @@ function App() {
         <Route path={'/resources/blog'} element={<Blog />} />
         <Route path={'/resources/blog/:id'} element={<BlogDetails />} />
         <Route path={'/cart'} element={<Cart />} />
-        <Route path={'/search'} element={<Test />} />
+        <Route path={'/tester'} element={<Test />} />
       </Routes>
       <Footer />
       <Toaster />
