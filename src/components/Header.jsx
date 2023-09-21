@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
 import {
   Text,
@@ -26,6 +26,11 @@ const HoverableH1 = styled.h1`
 `;
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/tester');
+  };
   return (
     <BODY style={{ position: 'relative' }}>
       <Center
@@ -57,10 +62,15 @@ const Header = () => {
           </Text>
         </Link>
         <HStack>
-          <Button _hover={{ backgroundColor: 'green.500' }}>Search</Button>
+          <Button
+            w={'40vw'}
+            _hover={{ backgroundColor: 'green.500' }}
+            onClick={handleButtonClick}
+          >
+            Search for products here
+          </Button>
         </HStack>
 
-        <SearchFilter />
         <HStack>
           <FiShoppingBag size={'27'} />
           <Box w={'20'} mr={['8', '10']}>

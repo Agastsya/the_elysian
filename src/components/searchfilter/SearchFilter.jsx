@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { server } from '../..';
 import toast from 'react-hot-toast';
-import { Input } from '@chakra-ui/react';
+import { Box, Center, Input, Heading } from '@chakra-ui/react';
 import Table from './Table';
 import { useNavigate } from 'react-router-dom';
 import Test from './Test';
@@ -37,11 +37,31 @@ const SearchFilter = () => {
 
   return (
     <>
-      {' '}
-      <Input w={'40vw'} value={searchItem} onChange={handleInputChange}></Input>
-      {filteredItems.map((i, index) => (
-        <Table key={i.id} title={i.title} id={i.id} price={i.price} />
-      ))}
+      <Center w="100vw" my={'20px'} display={'flex'} flexDirection={'column'}>
+        <Heading fontFamily={'Arbutus Slab'}>
+          Sift Through Our Inventory
+        </Heading>
+        <Input
+          w="40vw"
+          value={searchItem}
+          onChange={handleInputChange}
+          borderColor={'green.500'}
+          focusBorderColor="green.500"
+          placeholder="Search for products..."
+        />
+      </Center>
+      <Box display={'flex'} flexWrap={'wrap'} mx={'3vw'} columnGap={'3vw'}>
+        {filteredItems.map((i, index) => (
+          <Table
+            key={i.id}
+            title={i.title}
+            id={i.id}
+            price={i.price}
+            image={i.image}
+            category={i.category}
+          />
+        ))}
+      </Box>
     </>
   );
 };

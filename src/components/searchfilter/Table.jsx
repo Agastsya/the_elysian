@@ -1,12 +1,19 @@
 import React from 'react';
 import './test.css';
+import { Text } from '@chakra-ui/react';
+import ProductCard from '../ProductCard';
 
-const Table = ({ id, title, price, newvalue }) => {
+const Table = ({ id, title, price, image, category }) => {
   return (
     <>
-      <h1 class="tablestyles" className="title">
-        {title}
-      </h1>
+      <ProductCard
+        key={id}
+        title={title.split('-')[0]}
+        img={image}
+        price={price}
+        category={category}
+        id={id}
+      />
     </>
   );
 };
