@@ -51,7 +51,7 @@ const Login = () => {
 
       setLoader(false);
       setIsAuthenticated(true);
-      navigate('/');
+      navigate('/account');
     } catch (error) {
       toast.error(error.response.data.message);
       setLoader(false);
