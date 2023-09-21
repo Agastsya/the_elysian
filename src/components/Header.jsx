@@ -13,6 +13,11 @@ import {
 import styled from 'styled-components';
 import '../styles/Header.scss';
 import { FaSearch } from 'react-icons/fa';
+import { FaMapMarkedAlt } from 'react-icons/fa';
+import { RiAccountPinBoxFill } from 'react-icons/ri';
+import { BsFillCartFill } from 'react-icons/bs';
+import { GiShoppingCart } from 'react-icons/gi';
+import CartIcon from '../assets/svg/CartIcon';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -66,6 +71,7 @@ const Header = () => {
           <Button
             w={{ base: '5vw', md: '40vw' }}
             fontSize={{ base: '10px', md: 'md' }}
+            backgroundColor={'green.200'}
             _hover={{ backgroundColor: 'green.500' }}
             onClick={handleButtonClick}
           >
@@ -77,8 +83,33 @@ const Header = () => {
         </HStack>
 
         <HStack>
-          <FiShoppingBag size={'27'} />
-          <Box w={'20'} mr={['8', '10']}>
+          <HStack
+            gap={'6vw'}
+            mr={'2vw'}
+            display={{ base: 'block', md: 'none' }}
+          >
+            <Link to={'/resources'}>
+              <FiShoppingBag size={'27'} />
+            </Link>
+            <Link to={'/findus'}>
+              <FaMapMarkedAlt size={'27'} />
+            </Link>
+            <Link to={'/login'}>
+              <RiAccountPinBoxFill size={'27'} />
+            </Link>
+            <Link to={'/cart'}>
+              <CartIcon />
+            </Link>
+          </HStack>
+
+          <Link to={'/resources'}>
+            <FiShoppingBag size={'27'} />
+          </Link>
+          <Box
+            w={'20'}
+            mr={['8', '10']}
+            display={{ base: 'none', md: 'block' }}
+          >
             <Link to={'/resources'}>
               <HStack>
                 <VStack>
@@ -112,7 +143,11 @@ const Header = () => {
             </Link>
           </Box>
 
-          <Box w={['40', '25']} mr={['-10', '10']}>
+          <Box
+            w={['40', '25']}
+            mr={['-10', '10']}
+            display={{ base: 'none', md: 'block' }}
+          >
             <Link to={'/findus'}>
               <HStack>
                 <FiMapPin size={'27'} />
@@ -141,7 +176,11 @@ const Header = () => {
             </Link>
           </Box>
 
-          <Box w={'20'} mr={['16', '24']}>
+          <Box
+            w={'20'}
+            mr={['16', '24']}
+            display={{ base: 'none', md: 'block' }}
+          >
             <Link to={'/login'}>
               <HStack>
                 <Avatar name="Agastsya Joshi" />
@@ -170,7 +209,8 @@ const Header = () => {
               </HStack>
             </Link>
           </Box>
-          <Box w={'20'} mr={['5', '5']}>
+
+          <Box w={'20'} mr={['5', '5']} display={{ base: 'none', md: 'block' }}>
             <Link to={'/cart'}>
               <HStack>
                 <Text
@@ -181,15 +221,7 @@ const Header = () => {
                   mt={'-1.5vh'}
                   className="nav_link"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    fill="#065f46"
-                    viewBox="0 0 256 256"
-                  >
-                    <path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"></path>
-                  </svg>
+                  <CartIcon />
                 </Text>
                 <Text
                   fontSize={'smaller'}
