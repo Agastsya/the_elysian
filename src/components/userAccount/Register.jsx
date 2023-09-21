@@ -14,6 +14,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { apiserver } from '../../index';
 import Loader from '../Loader';
+import { useNavigate } from 'react-router-dom';
 
 const BODY = styled.body`
   font-family: 'Nunito', serif;
@@ -28,6 +29,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loader, setLoader] = useState(false);
+  const navigate = useNavigate();
 
   const submitHandler = async e => {
     e.preventDefault();
@@ -45,6 +47,7 @@ const Register = () => {
       );
       toast.success(data.message);
       setLoader(false);
+      navigate('/');
     } catch (error) {
       toast.error(error.response.data.message);
     }
