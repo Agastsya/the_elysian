@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useContext } from 'react';
 import PageContext from './context/PageContext';
 import {
@@ -10,6 +10,8 @@ import {
   Image,
   Button,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const buttonstyle = {
   style: {
@@ -25,6 +27,8 @@ const buttonstyle = {
 };
 
 const Cart = () => {
+  const navigate = useNavigate();
+
   const {
     addToCart,
     removeCartItem,
@@ -32,10 +36,16 @@ const Cart = () => {
     reduceCart,
     emptyCart,
     TotalPrice,
+    isAuthenticated,
   } = useContext(PageContext);
 
   const total = TotalPrice();
   const originalPrice = total + 100;
+  useEffect(() => {
+    isAuthenticated
+      ? navigate('/cart')
+      : toast.error('Login or Register to view cart') && navigate('/login');
+  });
 
   return (
     <>

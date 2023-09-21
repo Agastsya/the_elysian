@@ -38,11 +38,11 @@ const SearchFilter = () => {
   return (
     <>
       <Center w="100vw" my={'20px'} display={'flex'} flexDirection={'column'}>
-        <Heading fontFamily={'Arbutus Slab'}>
+        <Heading fontFamily={'Arbutus Slab'} textAlign={'center'}>
           Sift Through Our Inventory
         </Heading>
         <Input
-          w="40vw"
+          w="80%"
           value={searchItem}
           onChange={handleInputChange}
           borderColor={'green.500'}
@@ -50,8 +50,13 @@ const SearchFilter = () => {
           placeholder="Search for products..."
         />
       </Center>
-      <Box display={'flex'} flexWrap={'wrap'} mx={'3vw'} columnGap={'3vw'}>
-        {filteredItems.map((i, index) => (
+      <Box
+        display={'flex'}
+        flexWrap={'wrap'}
+        columnGap={'3vw'}
+        justifyContent={'center'}
+      >
+        {filteredItems.map(i => (
           <Table
             key={i.id}
             title={i.title}
@@ -59,6 +64,7 @@ const SearchFilter = () => {
             price={i.price}
             image={i.image}
             category={i.category}
+            i={i}
           />
         ))}
       </Box>

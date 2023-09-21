@@ -8,9 +8,11 @@ import {
   Box,
   Center,
   Button,
+  Icon,
 } from '@chakra-ui/react';
 import styled from 'styled-components';
 import '../styles/Header.scss';
+import { FaSearch } from 'react-icons/fa';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -62,11 +64,15 @@ const Header = () => {
         </Link>
         <HStack>
           <Button
-            w={'40vw'}
+            w={{ base: '5vw', md: '40vw' }}
+            fontSize={{ base: '10px', md: 'md' }}
             _hover={{ backgroundColor: 'green.500' }}
             onClick={handleButtonClick}
           >
-            Search for products here
+            <Icon as={FaSearch} mr={{ base: 0, md: 2 }} />
+            <Box display={{ base: 'none', md: 'block' }}>
+              Search for products here
+            </Box>
           </Button>
         </HStack>
 

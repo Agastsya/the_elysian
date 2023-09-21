@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   VStack,
   Container,
@@ -13,6 +13,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Loader from '../Loader';
+import PageContext from '../context/PageContext';
 
 const BODY = styled.body`
   font-family: 'Nunito', serif;
@@ -28,6 +29,7 @@ const Login = () => {
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
 
+  const { setIsAuthenticated } = useContext(PageContext);
   const submitHandler = async e => {
     try {
       e.preventDefault();
@@ -46,7 +48,9 @@ const Login = () => {
         }
       );
       toast.success(data.message);
+
       setLoader(false);
+      setIsAuthenticated(true);
       navigate('/');
     } catch (error) {
       toast.error(error.response.data.message);

@@ -4,10 +4,15 @@ import { toast } from 'react-hot-toast';
 
 const PageState = props => {
   const [cartItems, setCartItems] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // ADD TO CART FUNCTION
 
   const addToCart = prod => {
+    if (!isAuthenticated) {
+      toast.error('Login to add to cart');
+      return;
+    }
     const existingItem = cartItems.find(item => item.id === prod.id);
 
     if (existingItem) {
@@ -75,6 +80,8 @@ const PageState = props => {
         removeCartItem,
         emptyCart,
         TotalPrice,
+        isAuthenticated,
+        setIsAuthenticated,
       }}
     >
       {props.children}

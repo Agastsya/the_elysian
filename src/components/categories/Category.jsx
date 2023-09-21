@@ -6,7 +6,6 @@ import ProductCard from '../ProductCard';
 import Loader from '../Loader';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import SearchFilter from '../searchfilter/SearchFilter';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -36,7 +35,7 @@ const Category = ({ uniqueName }) => {
       }
     };
     fetchCategoryProducts();
-  });
+  }, [product]);
   return (
     <BODY>
       <Container maxW={'container.xl'}>
@@ -59,9 +58,7 @@ const Category = ({ uniqueName }) => {
                     id={i.id}
                     prod={i}
                   />
-                ) : (
-                  console.log('didnt load')
-                )
+                ) : null
               )}
             </HStack>
           </>

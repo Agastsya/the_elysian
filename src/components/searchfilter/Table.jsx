@@ -1,9 +1,8 @@
 import React from 'react';
 import './test.css';
-import { Text } from '@chakra-ui/react';
 import ProductCard from '../ProductCard';
 
-const Table = ({ id, title, price, image, category }) => {
+const Table = ({ i, key, id, title, price, image, category }) => {
   return (
     <>
       <ProductCard
@@ -13,6 +12,7 @@ const Table = ({ id, title, price, image, category }) => {
         price={price}
         category={category}
         id={id}
+        prod={i}
       />
     </>
   );
