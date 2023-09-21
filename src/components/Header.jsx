@@ -218,11 +218,11 @@ const Header = () => {
                   >
                     <NavLink to={'/login'} className="nav_link">
                       {isAuthenticated ? (
-                        <Text>Sign In</Text>
-                      ) : (
                         <Link onClick={logouthandler}>
                           <Text>Logout</Text>
                         </Link>
+                      ) : (
+                        <Text>Sign In</Text>
                       )}
                     </NavLink>{' '}
                   </Text>
