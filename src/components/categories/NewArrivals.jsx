@@ -34,12 +34,10 @@ const NewArrivals = () => {
         setProducts(data);
         setLoading(false);
         a.setTotalItems(data);
-      } catch (error) {
-        console.log('error');
-      }
+      } catch (error) {}
     };
     fetchProducts();
-  });
+  }, [products]);
   return (
     <BODY>
       <Container maxW={'container.xl'}>

@@ -1,8 +1,18 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
-import { Text, Avatar, HStack, VStack, Box, Center } from '@chakra-ui/react';
+import {
+  Text,
+  Avatar,
+  HStack,
+  VStack,
+  Box,
+  Center,
+  Button,
+  Icon,
+} from '@chakra-ui/react';
 import styled from 'styled-components';
 import '../styles/Header.scss';
+import { FaSearch } from 'react-icons/fa';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -17,8 +27,13 @@ const HoverableH1 = styled.h1`
 `;
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/tester');
+  };
   return (
-    <BODY>
+    <BODY style={{ position: 'relative' }}>
       <Center
         maxW={'100vw'}
         color={'black'}
@@ -47,6 +62,20 @@ const Header = () => {
             <HoverableH1>thelysian</HoverableH1>
           </Text>
         </Link>
+        <HStack>
+          <Button
+            w={{ base: '5vw', md: '40vw' }}
+            fontSize={{ base: '10px', md: 'md' }}
+            _hover={{ backgroundColor: 'green.500' }}
+            onClick={handleButtonClick}
+          >
+            <Icon as={FaSearch} mr={{ base: 0, md: 2 }} />
+            <Box display={{ base: 'none', md: 'block' }}>
+              Search for products here
+            </Box>
+          </Button>
+        </HStack>
+
         <HStack>
           <FiShoppingBag size={'27'} />
           <Box w={'20'} mr={['8', '10']}>

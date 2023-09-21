@@ -23,6 +23,8 @@ import GetHelp from './components/Services/GetHelp.jsx';
 import Blog from './components/Services/Blog.jsx';
 import BlogDetails from './components/Services/BlogDetails.jsx';
 import Cart from './components/Cart.jsx';
+import Test from './components/searchfilter/Test.jsx';
+import UserProfile from './components/userAccount/UserProfile.jsx';
 
 export const GlobalStyle = styled.body`
   body {
@@ -64,6 +66,7 @@ function App() {
         {/*User Account Pages*/}
         <Route path={'/register'} element={<Register />} />
         <Route path={'/login'} element={<Login />} />
+        <Route path={'/account'} element={<UserProfile />} />
 
         {/*Top Right Header Pages*/}
         <Route path={'/resources'} element={<Resources />} />
@@ -74,6 +77,7 @@ function App() {
         <Route path={'/resources/blog'} element={<Blog />} />
         <Route path={'/resources/blog/:id'} element={<BlogDetails />} />
         <Route path={'/cart'} element={<Cart />} />
+        <Route path={'/tester'} element={<Test />} />
       </Routes>
       <Footer />
       <Toaster />

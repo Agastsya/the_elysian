@@ -35,7 +35,7 @@ const Category = ({ uniqueName }) => {
       }
     };
     fetchCategoryProducts();
-  });
+  }, [product]);
   return (
     <BODY>
       <Container maxW={'container.xl'}>
@@ -58,9 +58,7 @@ const Category = ({ uniqueName }) => {
                     id={i.id}
                     prod={i}
                   />
-                ) : (
-                  console.log('didnt load')
-                )
+                ) : null
               )}
             </HStack>
           </>
