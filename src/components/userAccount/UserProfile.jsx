@@ -8,7 +8,7 @@ const UserProfile = () => {
   const [isAuthenticated] = useContext(PageContext);
   useEffect(() => {
     isAuthenticated
-      ? navigate('/account')
+      ? navigate('/')
       : toast.error('Login or Register for access') && navigate('/login');
   });
 
