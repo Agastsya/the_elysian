@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   VStack,
   Container,
@@ -29,11 +29,21 @@ const Login = () => {
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const authToken = localStorage.getItem('authToken');
+
+    if (authToken) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   const { setIsAuthenticated } = useContext(PageContext);
   const submitHandler = async e => {
     try {
       e.preventDefault();
       setLoader(true);
+      // Set the authentication state to true
+
       const { data } = await axios.post(
         `https://backend-thelysian.onrender.com/api/v1/user/login`,
         {
@@ -47,6 +57,7 @@ const Login = () => {
           withCredentials: true,
         }
       );
+      localStorage.setItem('authToken', data.token);
       toast.success(data.message);
 
       setLoader(false);

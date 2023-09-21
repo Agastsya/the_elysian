@@ -9,12 +9,13 @@ import {
 } from '@chakra-ui/react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { apiserver } from '../../index';
 import Loader from '../Loader';
 import { useNavigate } from 'react-router-dom';
+import PageContext from '../context/PageContext';
 
 const BODY = styled.body`
   font-family: 'Nunito', serif;
@@ -30,6 +31,8 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
+
+  const { setIsAuthenticated } = useContext(PageContext);
 
   const submitHandler = async e => {
     e.preventDefault();
@@ -47,6 +50,7 @@ const Register = () => {
       );
       toast.success(data.message);
       setLoader(false);
+      setIsAuthenticated(true);
       navigate('/');
     } catch (error) {
       toast.error(error.response.data.message);

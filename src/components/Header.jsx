@@ -18,6 +18,11 @@ import { RiAccountPinBoxFill } from 'react-icons/ri';
 import { BsFillCartFill } from 'react-icons/bs';
 import { GiShoppingCart } from 'react-icons/gi';
 import CartIcon from '../assets/svg/CartIcon';
+import { useContext } from 'react';
+import PageContext from './context/PageContext';
+import axios from 'axios';
+import { apiserver } from '..';
+import toast from 'react-hot-toast';
 
 const BODY = styled.body`
   background-color: #dcfce7;
@@ -33,6 +38,15 @@ const HoverableH1 = styled.h1`
 
 const Header = () => {
   const navigate = useNavigate();
+  const { isAuthenticated } = useContext(PageContext);
+
+  const logouthandler = async () => {
+    try {
+      localStorage.removeItem('authToken');
+    } catch (error) {}
+
+    navigate('/login');
+  };
 
   const handleButtonClick = () => {
     navigate('/tester');
@@ -202,7 +216,13 @@ const Header = () => {
                     className="nav_link"
                   >
                     <NavLink to={'/login'} className="nav_link">
-                      Sign In
+                      {isAuthenticated ? (
+                        <Link onClick={logouthandler}>
+                          <Text>Logout</Text>
+                        </Link>
+                      ) : (
+                        <Text>Sign In</Text>
+                      )}
                     </NavLink>{' '}
                   </Text>
                 </VStack>
