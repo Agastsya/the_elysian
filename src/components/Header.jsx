@@ -42,8 +42,7 @@ const Header = () => {
 
   const logouthandler = async () => {
     try {
-      const { response } = await axios.get(`${apiserver}/logout`);
-      toast.success(response.message);
+      localStorage.removeItem('authToken');
     } catch (error) {}
 
     navigate('/login');
