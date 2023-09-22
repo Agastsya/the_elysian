@@ -5,6 +5,8 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import { apiserver } from '../..';
 import { HStack, Text, VStack } from '@chakra-ui/react';
+import Header from '../Header';
+import Footer from '../Footer';
 
 const UserProfile = () => {
   const { user, setUser } = useContext(PageContext);
@@ -12,7 +14,7 @@ const UserProfile = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(PageContext);
   useEffect(() => {
     isAuthenticated
-      ? navigate('/account')
+      ? navigate('/account') && console.log('user is authenticated')
       : toast.error('Login or Register for access') && navigate('/login');
 
     axios
@@ -20,13 +22,14 @@ const UserProfile = () => {
         withCredentials: true,
       })
       .then(res => {
-        setUser(res.data.user);
+        setUser(res?.data?.user);
         setIsAuthenticated(true);
       });
   });
 
   return (
     <>
+      <Header />
       <VStack>
         <HStack>
           <Text>Name:</Text>
@@ -37,6 +40,7 @@ const UserProfile = () => {
           <Text>{user?.email}</Text>
         </HStack>
       </VStack>
+      <Footer />
     </>
   );
 };
