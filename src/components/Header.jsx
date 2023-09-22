@@ -42,6 +42,7 @@ const Header = () => {
   const logouthandler = async () => {
     try {
       localStorage.removeItem('authToken');
+      window.location.reload();
     } catch (error) {}
 
     navigate('/login');
