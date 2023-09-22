@@ -30,11 +30,11 @@ const UserProfile = () => {
       <VStack>
         <HStack>
           <Text>Name:</Text>
-          <Text>{user.name}</Text>
+          <Text>{user?.name}</Text>
         </HStack>
         <HStack>
-          <Text>Name:</Text>
-          <Text>{user.email}</Text>
+          <Text>Email:</Text>
+          <Text>{user?.email}</Text>
         </HStack>
       </VStack>
     </>
