@@ -15,13 +15,11 @@ import '../styles/Header.scss';
 import { FaSearch } from 'react-icons/fa';
 import { FaMapMarkedAlt } from 'react-icons/fa';
 import { RiAccountPinBoxFill } from 'react-icons/ri';
-import { BsFillCartFill } from 'react-icons/bs';
-import { GiShoppingCart } from 'react-icons/gi';
+
 import CartIcon from '../assets/svg/CartIcon';
 import { useContext } from 'react';
 import PageContext from './context/PageContext';
-import axios from 'axios';
-import { apiserver } from '..';
+
 import toast from 'react-hot-toast';
 
 const BODY = styled.body`
@@ -38,7 +36,7 @@ const HoverableH1 = styled.h1`
 
 const Header = () => {
   const navigate = useNavigate();
-  const { isAuthenticated } = useContext(PageContext);
+  const { isAuthenticated, user } = useContext(PageContext);
 
   const logouthandler = async () => {
     try {
@@ -46,6 +44,7 @@ const Header = () => {
     } catch (error) {}
 
     navigate('/login');
+    toast.success('Logged out successfully');
   };
 
   const handleButtonClick = () => {
@@ -205,7 +204,7 @@ const Header = () => {
                     justifyContent={'flex-start'}
                     alignSelf={'flex-start'}
                   >
-                    <HoverableH1>Account</HoverableH1>
+                    <HoverableH1>{user.name}</HoverableH1>
                   </Text>
                   <Text
                     fontSize={'small'}

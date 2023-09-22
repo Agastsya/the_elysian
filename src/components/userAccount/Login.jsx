@@ -35,7 +35,7 @@ const Login = () => {
     if (authToken) {
       setIsAuthenticated(true);
     }
-  }, []);
+  });
 
   const { setIsAuthenticated } = useContext(PageContext);
   const submitHandler = async e => {
