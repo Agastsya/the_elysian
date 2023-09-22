@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 const PageState = props => {
   const [cartItems, setCartItems] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState({});
 
   // ADD TO CART FUNCTION
 
@@ -82,6 +83,8 @@ const PageState = props => {
         TotalPrice,
         isAuthenticated,
         setIsAuthenticated,
+        user,
+        setUser,
       }}
     >
       {props.children}
