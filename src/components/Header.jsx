@@ -208,7 +208,7 @@ const Header = () => {
                       {isAuthenticated ? (
                         <Text>{user?.name}</Text>
                       ) : (
-                        <Text>Sign In</Text>
+                        <Text>Account</Text>
                       )}
                     </HoverableH1>
                   </Text>
