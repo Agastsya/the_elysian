@@ -6,6 +6,7 @@ const PageState = props => {
   const [cartItems, setCartItems] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
+  const [name, setName] = useState('');
 
   // ADD TO CART FUNCTION
 
@@ -85,6 +86,8 @@ const PageState = props => {
         setIsAuthenticated,
         user,
         setUser,
+        name,
+        setName,
       }}
     >
       {props.children}

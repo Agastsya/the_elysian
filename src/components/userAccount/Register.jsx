@@ -54,7 +54,6 @@ const Register = () => {
       navigate('/');
       localStorage.setItem('authToken', data.token);
       toast.success(data.message);
-      setUser(data);
     } catch (error) {
       toast.error(error.response.data.message);
       setLoader(false);

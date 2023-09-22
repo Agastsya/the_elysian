@@ -17,12 +17,12 @@ const UserProfile = () => {
       ? console.log('user is authenticated')
       : toast.error('Login or Register for access') && navigate('/login');
 
-    axios
+    const { data } = axios
       .get(`${apiserver}/me`, {
         withCredentials: true,
       })
       .then(res => {
-        setUser(res?.data?.user);
+        setUser(data?.name);
         setIsAuthenticated(true);
       });
   });
