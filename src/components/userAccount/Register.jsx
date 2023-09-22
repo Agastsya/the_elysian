@@ -32,7 +32,7 @@ const Register = () => {
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
 
-  const { setIsAuthenticated } = useContext(PageContext);
+  const { setIsAuthenticated, setUser } = useContext(PageContext);
 
   const submitHandler = async e => {
     e.preventDefault();
@@ -52,6 +52,9 @@ const Register = () => {
       setLoader(false);
       setIsAuthenticated(true);
       navigate('/');
+      localStorage.setItem('authToken', data.token);
+      toast.success(data.message);
+      setUser(data);
     } catch (error) {
       toast.error(error.response.data.message);
       setLoader(false);
