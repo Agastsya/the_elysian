@@ -204,7 +204,7 @@ const Header = () => {
                     justifyContent={'flex-start'}
                     alignSelf={'flex-start'}
                   >
-                    <HoverableH1>{user.name}</HoverableH1>
+                    <HoverableH1>{user?.name}</HoverableH1>
                   </Text>
                   <Text
                     fontSize={'small'}
