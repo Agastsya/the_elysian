@@ -50,10 +50,12 @@ const Register = () => {
       );
       toast.success(data.message);
       setLoader(false);
-      setIsAuthenticated(true);
-      navigate('/');
       localStorage.setItem('authToken', data.token);
       toast.success(data.message);
+      setIsAuthenticated(true);
+      navigate('/');
+      window.location.reload();
+      window.location.href = '/';
     } catch (error) {
       toast.error(error.response.data.message);
       setLoader(false);
