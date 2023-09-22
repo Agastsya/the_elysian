@@ -14,7 +14,7 @@ const UserProfile = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(PageContext);
   useEffect(() => {
     isAuthenticated
-      ? navigate('/account') && console.log('user is authenticated')
+      ? console.log('user is authenticated')
       : toast.error('Login or Register for access') && navigate('/login');
 
     axios

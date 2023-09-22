@@ -37,7 +37,7 @@ const Login = () => {
     }
   });
 
-  const { setIsAuthenticated } = useContext(PageContext);
+  const { setIsAuthenticated, setUser } = useContext(PageContext);
   const submitHandler = async e => {
     try {
       e.preventDefault();
@@ -63,6 +63,7 @@ const Login = () => {
       setLoader(false);
       setIsAuthenticated(true);
       navigate('/');
+      setUser(data);
     } catch (error) {
       toast.error(error.response.data.message);
       setLoader(false);
