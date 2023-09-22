@@ -63,6 +63,7 @@ const Login = () => {
       setLoader(false);
       setIsAuthenticated(true);
       navigate('/');
+      window.location.reload();
     } catch (error) {
       toast.error(error.response.data.message);
       setLoader(false);

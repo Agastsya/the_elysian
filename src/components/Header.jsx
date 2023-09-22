@@ -15,6 +15,7 @@ import '../styles/Header.scss';
 import { FaSearch } from 'react-icons/fa';
 import { FaMapMarkedAlt } from 'react-icons/fa';
 import { RiAccountPinBoxFill } from 'react-icons/ri';
+import account from '../assets/account.png';
 
 import CartIcon from '../assets/svg/CartIcon';
 import { useContext } from 'react';
@@ -196,7 +197,7 @@ const Header = () => {
           >
             <Link to={'/login'}>
               <HStack>
-                <Avatar name="Agastsya Joshi" />
+                <img src={account} style={{ width: 35 }} />
                 <VStack>
                   <Text
                     fontSize={'smaller'}
