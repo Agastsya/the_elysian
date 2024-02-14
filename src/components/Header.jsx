@@ -41,6 +41,7 @@ const Header = () => {
   const logouthandler = async () => {
     try {
       localStorage.removeItem('authToken');
+      window.location.reload();
     } catch (error) {}
 
     navigate('/login');
@@ -219,8 +220,8 @@ const Header = () => {
                     <NavLink to={'/login'} className="nav_link">
                       {isAuthenticated ? (
                         <Link onClick={logouthandler}>
-                          {window.location.reload()}
                           <Text>Logout</Text>
+                          <a href="/">Logout</a>
                         </Link>
                       ) : (
                         <Text>Sign In</Text>
