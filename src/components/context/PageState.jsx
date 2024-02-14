@@ -11,10 +11,6 @@ const PageState = props => {
   // ADD TO CART FUNCTION
 
   const addToCart = prod => {
-    if (!isAuthenticated) {
-      toast.error('Login to add to cart');
-      return;
-    }
     const existingItem = cartItems.find(item => item.id === prod.id);
 
     if (existingItem) {

@@ -42,7 +42,7 @@ const Cart = () => {
   const total = TotalPrice();
   const originalPrice = total + 100;
   useEffect(() => {
-    isAuthenticated
+    !isAuthenticated
       ? navigate('/cart')
       : toast.error('Login or Register to view cart') && navigate('/login');
   });
