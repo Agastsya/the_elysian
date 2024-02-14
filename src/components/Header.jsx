@@ -2,7 +2,6 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FiShoppingBag, FiMapPin } from 'react-icons/fi';
 import {
   Text,
-  Avatar,
   HStack,
   VStack,
   Box,
@@ -98,11 +97,7 @@ const Header = () => {
         </HStack>
 
         <HStack>
-          <HStack
-            gap={'6vw'}
-            mr={'2vw'}
-            display={{ base: 'block', md: 'none' }}
-          >
+          <HStack gap={'6vw'} mr={'2vw'} display={{ base: 'flex', md: 'none' }}>
             <Link to={'/resources'}>
               <FiShoppingBag size={'27'} />
             </Link>
@@ -225,6 +220,7 @@ const Header = () => {
                     <NavLink to={'/login'} className="nav_link">
                       {isAuthenticated ? (
                         <Link onClick={logouthandler}>
+                          <Text>Logout</Text>
                           <a href="/">Logout</a>
                         </Link>
                       ) : (

@@ -54,7 +54,6 @@ const Register = () => {
       toast.success(data.message);
       setIsAuthenticated(true);
       navigate('/');
-      window.location.reload();
       window.location.href = '/';
     } catch (error) {
       toast.error(error.response.data.message);
