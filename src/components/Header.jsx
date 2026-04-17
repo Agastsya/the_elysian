@@ -78,7 +78,7 @@ const Header = () => {
             fontFamily={'Arbutus Slab'}
             fontSize={'2xl'}
           >
-            <HoverableH1>thelysian</HoverableH1>
+            <HoverableH1>SpawnV2</HoverableH1>
           </Text>
         </Link>
         <HStack>
